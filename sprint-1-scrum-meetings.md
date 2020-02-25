@@ -3,23 +3,23 @@ The team is to meet for 10 days during the two-week sprint - 5 meetings per week
 
 Question    |          Person                                             | day | day | day | day | day | day | day |day | day | day |
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
-| What did you complete since the last meeting? | Teammate 1 |   
-|            | Teammate 2 |   
-|            | Teammate 3 |   
-|            | Teammate 4 |
-| What will you accomplish before the next meeting? | Teammate 1 | 
-|            | Teammate 2 |   
-|            | Teammate 3 |   
-|            | Teammate 4 |
-| Do you have anything that's getting in the way of doing your work? | Teammate 1 | 
-|            | Teammate 2 |   
-|            | Teammate 3 |   
-|            | Teammate 4 |
-| What insights have you made? |Teammate 1 | 
-|            | Teammate 2 |   
-|            | Teammate 3 |   
-|            | Teammate 4 |
-| Do any changes to the project need to be made as a result of your work? |Teammate 1 | 
-|            | Teammate 2 |   
-|            | Teammate 3 |   
-|            | Teammate 4 |
+| What did you complete since the last meeting? | Chloe Adzima| Started the UML diagrams 
+|            | Megan Spiers| Started the UML diagrams
+|            | Matthew Scott |   Started the UML diagrams
+|            | Matthew Stewart | Started the UML diagrams
+| What will you accomplish before the next meeting? | Chloe Adzima | Meet with TA
+|            | Megan Spiers |   Meet with TA
+|            | Matthew Scott |   Meet with TA
+|            | Matthew Stewart | Meet TA
+| Do you have anything that's getting in the way of doing your work? | Chloe Adzima | confused on requirements for UML diagrams
+|            | Megan Spiers |   Not understanding the material
+|            | Matthew Scott |   Other projects and assignments going on
+|            | Matthew Stewart | Not knowing the requirements of project in general
+| What insights have you made? |Chloe Adzima | We are all free to meet on Fridays
+|            | Megan Spiers |   No insights yet
+|            | Matthew Scott |   No insights yet
+|            | Matthew Stewart | No insights yet
+| Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Not yet
+|            | Megan Spiers |   Not yet
+|            | Matthew Scott |   Not yet
+|            | Matthew Stewart | Not yet
