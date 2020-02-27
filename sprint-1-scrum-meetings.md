@@ -5,7 +5,7 @@ Question    |          Person                                             | day 
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
 | What did you complete since the last meeting? | Chloe Adzima| Started the UML diagrams | Thought about what user stories should be in sprint 1 backlog
 |            | Megan Spiers| Started the UML diagrams | Thought about who could do what part of project
-|            | Matthew Scott |   Started the UML diagrams | drafting ideas for potential UML diagram / class model
+|            | Matthew Scott |   Started the UML diagrams | drafting ideas for potential UML diagram / class model | We discussed our sprint 1 backlog and selected stories to work on
 |            | Matthew Stewart | Started the UML diagrams
 | What will you accomplish before the next meeting? | Chloe Adzima | Meet with TA | Create sprint 1 backlog
 |            | Megan Spiers |   Meet with TA | Brush up on our options for sprint 1
