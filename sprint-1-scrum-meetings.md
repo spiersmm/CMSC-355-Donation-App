@@ -5,11 +5,11 @@ Question    |          Person                                             | day 
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
 | What did you complete since the last meeting? | Chloe Adzima| Started the UML diagrams | Thought about what user stories should be in sprint 1 backlog
 |            | Megan Spiers| Started the UML diagrams | Thought about who could do what part of project
-|            | Matthew Scott |   Started the UML diagrams
+|            | Matthew Scott |   Started the UML diagrams | drafting ideas for potential UML diagram / class model
 |            | Matthew Stewart | Started the UML diagrams
 | What will you accomplish before the next meeting? | Chloe Adzima | Meet with TA | Create sprint 1 backlog
 |            | Megan Spiers |   Meet with TA | Brush up on our options for sprint 1
-|            | Matthew Scott |   Meet with TA
+|            | Matthew Scott |   Meet with TA | Hopefully have some diagrams to show
 |            | Matthew Stewart | Meet TA
 | Do you have anything that's getting in the way of doing your work? | Chloe Adzima | confused on requirements for UML diagrams | Not sure what user stories we will be able to complete this sprint
 |            | Megan Spiers |   Not understanding the material | time; other classes
