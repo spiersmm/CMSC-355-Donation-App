@@ -13,13 +13,13 @@ Question    |          Person                                             | day 
 |            | Matthew Stewart | Meet TA
 | Do you have anything that's getting in the way of doing your work? | Chloe Adzima | confused on requirements for UML diagrams | Not sure what user stories we will be able to complete this sprint
 |            | Megan Spiers |   Not understanding the material | time; other classes
-|            | Matthew Scott |   Other projects and assignments going on
+|            | Matthew Scott |   Other projects and assignments going on | Other classes for now / early stage uncertainty
 |            | Matthew Stewart | Not knowing the requirements of project in general
 | What insights have you made? |Chloe Adzima | We are all free to meet on Fridays | Learning how to connect activities in Android Studios
 |            | Megan Spiers |   No insights yet | Researched how the log in screen could work
-|            | Matthew Scott |   No insights yet
+|            | Matthew Scott |   No insights yet | learning android API / android studio and git
 |            | Matthew Stewart | No insights yet
 | Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Not yet | Not yet
 |            | Megan Spiers |   Not yet | Not yet
-|            | Matthew Scott |   Not yet
+|            | Matthew Scott |   Not yet | unsure yet
 |            | Matthew Stewart | Not yet
