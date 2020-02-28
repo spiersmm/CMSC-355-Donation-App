@@ -21,5 +21,5 @@ Question    |          Person                                             | day 
 |            | Matthew Stewart | No insights yet
 | Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Not yet | Not yet | not yet
 |            | Megan Spiers |   Not yet | Not yet | Not yet
-|            | Matthew Scott |   Not yet | unsure yet | not yet
+|            | Matthew Scott |   Not yet | unsure yet | not yet | not yet
 |            | Matthew Stewart | Not yet |
