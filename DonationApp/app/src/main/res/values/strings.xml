@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">Donation App</string>
+	<string name="username">Username</string>
+	<string name="password">Password</string>
+	<string name="login">Login</string>
+	<string name="sign_up">Sign up</string>
+	<string name="name">Name</string>
+	<string name="donor">Donor</string>
+	<string name="recipient">Recipient</string>
+	<string name="title_post_list">Posts</string>
+	<string name="title_post_detail">Post Detail</string>
+</resources>
