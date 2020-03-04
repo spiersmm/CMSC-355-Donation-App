@@ -1,12 +1,19 @@
 <resources>
-	<string name="app_name">Donation App</string>
-	<string name="username">Username</string>
-	<string name="password">Password</string>
-	<string name="login">Login</string>
-	<string name="sign_up">Sign up</string>
-	<string name="name">Name</string>
-	<string name="donor">Donor</string>
-	<string name="recipient">Recipient</string>
-	<string name="title_post_list">Posts</string>
-	<string name="title_post_detail">Post Detail</string>
+    <string name="app_name">Donation App</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="name">Name</string>
+    <string name="donor">Donor</string>
+    <string name="recipient">Recipient</string>
+    <string name="title_post_list">Posts</string>
+    <string name="title_post_detail">Post Detail</string>
+    <string name="my_items">My Items</string>
+    <string name="new_item">New Item</string>
+    <string name="current_postings">Current Postings</string>
+    <string name="past_postings">Past Postings</string>
+    <string name="item_description">Item Description</string>
+    <string name="edit">Edit</string>
+    <string name="todo">TODO</string>
 </resources>
