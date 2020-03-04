@@ -16,4 +16,13 @@
     <string name="item_description">Item Description</string>
     <string name="edit">Edit</string>
     <string name="todo">TODO</string>
+    <string name="post_new_item">Post New Item</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="categories">Categories</string>
+    <string name="delivery_method">Delivery Method</string>
+    <string name="condition">Condition</string>
+    <string name="quantity">Quantity</string>
+    <string name="post">Post</string>
+    <string name="delete">Delete</string>
+    <string name="todo">TODO</string>
 </resources>
