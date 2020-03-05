@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "493725354977",
+    "firebase_url": "https://projectb-team1.firebaseio.com",
+    "project_id": "projectb-team1",
+    "storage_bucket": "projectb-team1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493725354977:android:362cf45e7c73c9180160a0",
+        "android_client_info": {
+          "package_name": "edu.vcu.cmsc.softwareengineering.donationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493725354977-1v4rfupa33nb5t1668bebejbcb23jl58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.edu.vcu.cmsc.softwareengineering.donationapp",
+            "certificate_hash": "f7d00c082014401c0d9b17a1982f5a0d75fb7239"
+          }
+        },
+        {
+          "client_id": "493725354977-rhodl8gr6oiobd1084na1evrofg4874u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiOpVMDanIYDSTzVqHBMc4jN3ISWhXWNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493725354977-rhodl8gr6oiobd1084na1evrofg4874u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

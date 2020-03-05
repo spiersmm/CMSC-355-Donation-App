@@ -3,10 +3,12 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.os.Bundle;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,8 @@ public class postNewItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_new_item);
 
+
+        // create drop down menus for posting a new item
         createCategorySpinner();
         createDeliverySpinner();
         createConditionSpinner();
@@ -91,6 +95,7 @@ public class postNewItem extends AppCompatActivity {
         QuantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         quantity.setAdapter(QuantityAdapter);
     }
+
 
 
 }
