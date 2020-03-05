@@ -2,7 +2,8 @@
 The team is to meet for 10 days during the two-week sprint - 5 meetings per week. You must decide on a time to record your answers to the questions and then a single commit of the day's responses is to be made into your project repository for that day.
 
 Question    |          Person                                             | day | day | day | day | day | day | day |day | day | day |
-------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
+------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|
+| | |02/25/2020 | 02/26/2020 | 02/27/2020 | 02/28/2020 | 02/29/2020 | 03/02/2020 | 03/03/2020 | 03/04/2020 |
 | What did you complete since the last meeting? | Chloe Adzima| Started the UML diagrams | Thought about what user stories should be in sprint 1 backlog | Discussed sprint 1 backlog | Met with TA to go over user stories and sprint 1 backlog | Finished UML diagrams | Learned how to connect activities in Android Studio | Worked on donor main activity UI | Worked on UI for item posting
 |            | Megan Spiers| Started the UML diagrams | Thought about who could do what part of project | Broke down sprint 1 Backlog | Worked on UML | Complete Today's Assignments | Started Designing UI | More work on sprint 1 basics | learned more about UI's
 |            | Matthew Scott |   Started the UML diagrams | drafting ideas for potential UML diagram / class model | We discussed our sprint 1 backlog and selected stories to work on | Met with TA to get clarification on Project | completed UML models | Begun working on basic app interface | more work on first app activity draft | more commits for activity
