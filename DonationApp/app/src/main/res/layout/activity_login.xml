@@ -1,42 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:tools="http://schemas.android.com/tools"
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:padding="10dp">
-	
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/linearLayout2"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
 	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/username"/>
-	
+		android:id="@+id/textView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20dp"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="20dp"
+		android:text="@string/username"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
 	<EditText
-			android:id="@+id/usernameEditText"
-			android:layout_marginBottom="10dp"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			tools:ignore="Autofill,LabelFor,TextFields" />
-	
+		android:id="@+id/usernameEditText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/textView"
+		app:layout_constraintTop_toBottomOf="@+id/textView"
+		tools:ignore="Autofill,LabelFor,TextFields" />
+
 	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/password"/>
-	
+		android:id="@+id/textView2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="@string/password"
+		app:layout_constraintStart_toStartOf="@+id/usernameEditText"
+		app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
+
 	<EditText
-			android:id="@+id/passwordEditText"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="100dp"
-			android:inputType="textPassword"
-			tools:ignore="Autofill,LabelFor,TextFields" />
-	
+		android:id="@+id/passwordEditText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:inputType="textPassword"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/textView2"
+		app:layout_constraintTop_toBottomOf="@+id/textView2"
+		tools:ignore="Autofill,LabelFor,TextFields" />
+
 	<Button
-			android:id="@+id/loginButton"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:text="@string/login"/>
+		android:id="@+id/loginButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:text="@string/login"
+		app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
+		app:layout_constraintStart_toStartOf="@+id/passwordEditText"
+		app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
