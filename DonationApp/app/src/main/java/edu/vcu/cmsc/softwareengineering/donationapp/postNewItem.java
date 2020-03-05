@@ -22,13 +22,14 @@ public class postNewItem extends AppCompatActivity {
         createCategorySpinner();
         createDeliverySpinner();
         createConditionSpinner();
-        createQuantitySpinnter();
+        createQuantitySpinner();
     }
 
     public void createCategorySpinner() {
         Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
 
         List<String> categoryItems = new ArrayList<String>();
+        categoryItems.add("Category");
         categoryItems.add("Clothes");
         categoryItems.add("Food");
         categoryItems.add("Furniture");
@@ -48,6 +49,7 @@ public class postNewItem extends AppCompatActivity {
         Spinner delivery = (Spinner) findViewById(R.id.spinnerDelivery);
 
         List<String> deliveryItems = new ArrayList<String>();
+        deliveryItems.add("Delivery Method");
         deliveryItems.add("Pickup");
         deliveryItems.add("Delivery");
 
@@ -61,6 +63,7 @@ public class postNewItem extends AppCompatActivity {
         Spinner condition = (Spinner) findViewById(R.id.spinnerCondition);
 
         List<String> Items = new ArrayList<String>();
+        Items.add("Condition");
         Items.add("Perfect");
         Items.add("Ok");
         Items.add("Poor");
@@ -71,10 +74,11 @@ public class postNewItem extends AppCompatActivity {
         condition.setAdapter(conditionAdapter);
     }
 
-    public void createQuantitySpinnter() {
+    public void createQuantitySpinner() {
         Spinner quantity = (Spinner) findViewById(R.id.spinnerQuantity);
 
         List<String> Items = new ArrayList<String>();
+        Items.add("Quantity");
         Items.add("1");
         Items.add("2");
         Items.add("3");
