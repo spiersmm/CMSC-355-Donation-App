@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:493725354977:android:362cf45e7c73c9180160a0",
         "android_client_info": {
-          "package_name": "edu.vcu.cmsc.softwareengineering.donationapp"
+          "package_name": "com.edu.vcu.cmsc.softwareengineering.donationapp"
         }
       },
       "oauth_client": [
@@ -19,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.edu.vcu.cmsc.softwareengineering.donationapp",
+            "certificate_hash": "f7d00c082014401c0d9b17a1982f5a0d75fb7239"
+          }
+        },
+        {
+          "client_id": "493725354977-rhodl8gr6oiobd1084na1evrofg4874u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiOpVMDanIYDSTzVqHBMc4jN3ISWhXWNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493725354977-rhodl8gr6oiobd1084na1evrofg4874u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493725354977:android:e6fdce3411d97ae10160a0",
+        "android_client_info": {
+          "package_name": "edu.vcu.cmsc.softwareengineering.donationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493725354977-baln4q56gpr3st1iga4c509a6sqb8rbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.vcu.cmsc.softwareengineering.donationapp",
             "certificate_hash": "f7d00c082014401c0d9b17a1982f5a0d75fb7239"
           }
         },
