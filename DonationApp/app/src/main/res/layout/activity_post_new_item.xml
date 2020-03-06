@@ -31,20 +31,6 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerQuantity"
         app:layout_constraintVertical_bias="0.247" />
 
-    <EditText
-        android:id="@+id/ItemDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemImageView"
-        app:layout_constraintVertical_bias="0.091" />
-
     <TextView
         android:id="@+id/Enterdescription"
         android:layout_width="wrap_content"
@@ -133,15 +119,14 @@
         android:id="@+id/spinnerCategories"
         android:layout_width="194dp"
         android:layout_height="46dp"
-        android:layout_marginTop="2dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toEndOf="@+id/TextCategories"
-        app:layout_constraintTop_toBottomOf="@+id/ItemDescription"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription"
+        app:layout_constraintVertical_bias="0.099" />
 
     <Spinner
         android:id="@+id/spinnerDelivery"
@@ -196,6 +181,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewItem"
         app:layout_constraintVertical_bias="0.014"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:contentDescription="TODO" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/Enterdescription"
+        app:layout_constraintTop_toBottomOf="@+id/itemImageView"
+        app:layout_constraintVertical_bias="0.09" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

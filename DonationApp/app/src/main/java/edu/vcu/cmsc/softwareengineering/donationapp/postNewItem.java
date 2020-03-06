@@ -2,19 +2,30 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
+
 // Activity for having a donor post a new item for donation
-public class postNewItem extends AppCompatActivity {
+public class postNewItem extends AppCompatActivity  {
+
+    // variables for storing item data
+    private String EnteredDescription;
+    private String selectedCategory;
+    private String selectedDeliveryMethod;
+    private String selectedCondition;
+    private String selectedQuantity;
+
+    EditText description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +41,7 @@ public class postNewItem extends AppCompatActivity {
     }
 
     public void createCategorySpinner() {
-        Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
+        final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
 
         List<String> categoryItems = new ArrayList<String>();
         categoryItems.add("Category");
@@ -46,11 +57,23 @@ public class postNewItem extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, categoryItems);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categories.setAdapter(categoryAdapter);
-        //categories.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                selectedCategory = categories.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
     }
 
     public void createDeliverySpinner() {
-        Spinner delivery = (Spinner) findViewById(R.id.spinnerDelivery);
+        final Spinner delivery = (Spinner) findViewById(R.id.spinnerDelivery);
 
         List<String> deliveryItems = new ArrayList<String>();
         deliveryItems.add("Delivery Method");
@@ -61,10 +84,23 @@ public class postNewItem extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, deliveryItems);
         deliveryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         delivery.setAdapter(deliveryAdapter);
+        delivery.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                selectedDeliveryMethod = delivery.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
     }
 
     public void createConditionSpinner() {
-        Spinner condition = (Spinner) findViewById(R.id.spinnerCondition);
+        final Spinner condition = (Spinner) findViewById(R.id.spinnerCondition);
 
         List<String> Items = new ArrayList<String>();
         Items.add("Condition");
@@ -76,10 +112,23 @@ public class postNewItem extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, Items);
         conditionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         condition.setAdapter(conditionAdapter);
+        condition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                selectedCondition = condition.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
     }
 
     public void createQuantitySpinner() {
-        Spinner quantity = (Spinner) findViewById(R.id.spinnerQuantity);
+        final Spinner quantity = (Spinner) findViewById(R.id.spinnerQuantity);
 
         List<String> Items = new ArrayList<String>();
         Items.add("Quantity");
@@ -94,8 +143,24 @@ public class postNewItem extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, Items);
         QuantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         quantity.setAdapter(QuantityAdapter);
+        quantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                selectedQuantity = quantity.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
     }
 
-
+    public void getDescription() {
+        description = findViewById(R.id.editTextDescription);
+        EnteredDescription = description.getText().toString();
+    }
 
 }
