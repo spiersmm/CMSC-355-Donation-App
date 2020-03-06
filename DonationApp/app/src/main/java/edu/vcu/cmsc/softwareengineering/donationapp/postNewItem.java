@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Button;
+import android.text.InputType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +28,12 @@ import com.google.firebase.database.ValueEventListener;
 public class postNewItem extends AppCompatActivity  {
 
     // variables for storing item data
-    private String EnteredDescription;
+    String EnteredDescription;
     private String selectedCategory;
     private String selectedDeliveryMethod;
     private String selectedCondition;
     private String selectedQuantity;
 
-    EditText description;
     Button post;
 
     FirebaseDatabase myDatabase;
@@ -51,16 +51,14 @@ public class postNewItem extends AppCompatActivity  {
         createConditionSpinner();
         createQuantitySpinner();
 
-        // store entered description in string
-        getDescription();
-
+        final EditText description = (EditText) findViewById(R.id.editTextDescription);
         post = findViewById(R.id.PostNewItem);
 
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                   myDatabase = FirebaseDatabase.getInstance();
                   myDatabaseReference = myDatabase.getReference("Item Description");
-                  myDatabaseReference.setValue(EnteredDescription);
+                  myDatabaseReference.setValue(description.getText().toString());
 
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
@@ -187,11 +185,6 @@ public class postNewItem extends AppCompatActivity  {
 
             }
         });
-    }
-
-    public void getDescription() {
-        description = findViewById(R.id.editTextDescription);
-        EnteredDescription = description.getText().toString();
     }
 
 }
