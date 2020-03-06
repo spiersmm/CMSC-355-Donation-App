@@ -57,9 +57,12 @@ public class postNewItem extends AppCompatActivity  {
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                   myDatabase = FirebaseDatabase.getInstance();
-                  myDatabaseReference = myDatabase.getReference("Item Description");
-                  myDatabaseReference.push().setValue(description.getText().toString());
-
+                  myDatabaseReference = myDatabase.getReference("Item Info");
+                  //myDatabaseReference.push().setValue(description.getText().toString());
+                newItemInfo newItem = new newItemInfo(description.getText().toString(),
+                        selectedCategory, selectedDeliveryMethod,
+                        selectedCondition, selectedQuantity);
+                myDatabaseReference.push().setValue(newItem);
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
             }
