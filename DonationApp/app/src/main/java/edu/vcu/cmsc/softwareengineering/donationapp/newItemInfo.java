@@ -1,3 +1,5 @@
+// Project B Team 1
+// CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 
@@ -43,7 +45,11 @@ public class newItemInfo {
 
     @Override
     public String toString() {
-        return "Description: " + itemDescription + ", Category: " + itemCategory + ", Condition: " + itemCondition + ", Delivery Method: " + itemDeliveryMethod + ", Quantity: " + itemQuantity;
+        return "Description: " + itemDescription +
+                ", Category: " + itemCategory +
+                ", Condition: " + itemCondition +
+                ", Delivery Method: " + itemDeliveryMethod +
+                ", Quantity: " + itemQuantity;
     }
 
 }
