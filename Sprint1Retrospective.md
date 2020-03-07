@@ -12,6 +12,7 @@
   - Chloe connected the donor main screen to the post new item screen and created a class which will keep all of the item info together and added a realtime Firebase Database to the project to store the item info that is input by the donor
   - Megan then worked on getting the item information back out of the databse in order to fill the donor main activity screen with the item details of every item that the user has posted creating a framework that can be used for the organization main screen in future sprints as well
   - Matthew Stewart then cleaned up some of the files and prepped for work on Sprint 2
+  - Matthew Scott Helped create some functionality for submitting donation images
   - As a group we had problems with communication and waiting too long to assign specific roles for what each person will work on this sprint and most of us were not able to start working on the project until late this week because of midterms and work we had to do in other classes
   - We also ran into issues with pulling parts of the project from Github
   - Right now we all have a good idea of how we want the app to work which allowed us to create UI's that follow our storyboard, however, it was just harder for us to learn how to create all of the functionalities we want to incorporate into our app
