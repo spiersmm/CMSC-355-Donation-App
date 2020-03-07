@@ -7,15 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb47d09-c89c-4545-9652-3e40a1c009f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostDetailFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostDetailFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Register.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -172,11 +163,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="247">
+              <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
               <folding>
                 <element signature="e#0#2640#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -219,7 +210,6 @@
         <option value="$PROJECT_DIR$/../build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/PostNewItemTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfo.java" />
@@ -228,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/PostListActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/Register.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" />
       </list>
     </option>
   </component>
@@ -582,17 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#2640#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -674,6 +654,17 @@
           <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding>
             <element signature="e#0#382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#2640#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
