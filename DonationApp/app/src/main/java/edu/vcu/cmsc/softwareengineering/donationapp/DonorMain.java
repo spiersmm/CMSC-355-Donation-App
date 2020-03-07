@@ -63,7 +63,11 @@ public class DonorMain extends AppCompatActivity {
 					String condition = ds.child("itemCondition").getValue(String.class);
 					String deliveryMethod = ds.child("itemDeliveryMethod").getValue(String.class);
 					String quantity = ds.child("itemQuantity").getValue(String.class);
-					itemList.add("Description: " + description + ", Category: " + category + ", Condition: " + condition + ", Delivery Method: " + deliveryMethod + ", Quantity: " + quantity);
+					itemList.add("Description: " + description +
+							", Category: " + category +
+							", Condition: " + condition +
+							", Delivery Method: " + deliveryMethod +
+							", Quantity: " + quantity);
 				}
 				ListView listView = (ListView) findViewById(R.id.dmListView);
 				ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(DonorMain.this,android.R.layout.simple_list_item_1,itemList);

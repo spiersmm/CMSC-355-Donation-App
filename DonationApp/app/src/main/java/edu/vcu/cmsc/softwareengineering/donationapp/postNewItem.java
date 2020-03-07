@@ -61,8 +61,8 @@ public class postNewItem extends AppCompatActivity  {
                   myDatabaseReference = myDatabase.getReference("Item Info");
                   //myDatabaseReference.push().setValue(description.getText().toString());
                 newItemInfo newItem = new newItemInfo(description.getText().toString(),
-                        selectedCategory, selectedDeliveryMethod,
-                        selectedCondition, selectedQuantity);
+                        selectedCategory, selectedCondition,
+                        selectedDeliveryMethod, selectedQuantity);
                 myDatabaseReference.push().setValue(newItem);
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
