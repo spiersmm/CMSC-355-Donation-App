@@ -175,14 +175,15 @@
         android:layout_width="84dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="TODO"
+        android:contentDescription="submitImage"
+        android:onClick="imageSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewItem"
         app:layout_constraintVertical_bias="0.014"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:srcCompat="@android:drawable/ic_menu_camera"
         tools:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
