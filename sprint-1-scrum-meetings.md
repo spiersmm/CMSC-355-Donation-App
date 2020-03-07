@@ -23,4 +23,4 @@ Question    |          Person                                             | day 
 | Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Not yet | Not yet | not yet | not yet | not yet | no, still in learning stage | need to update UI to follow our storyboard | need to figure out how to allow user to upload an image | no
 |            | Megan Spiers |   Not yet | Not yet | Not yet | Not yet | Not yet | Not Yet | not Yet | not yet
 |            | Matthew Scott |   Not yet | unsure yet | not yet | not yet | not yet, planning stage still seems good so far | not yet | no, havent pushed to repo yet | not yet
-|            | Matthew Stewart | Not yet |  no  |  no  |  no  |  no  |  probably soon  |  no, just putting together seperate pieces  |  no, project is still in an early stage  |  no  |  no
+|            | Matthew Stewart | Not yet |  no  |  no  |  no  |  no  |  probably soon  |  no, just putting together seperate pieces  |  no, project is still in an early stage  |  no
