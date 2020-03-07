@@ -10,19 +10,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.Button;
-import android.text.InputType;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 // Activity for having a donor post a new item for donation
@@ -35,12 +31,15 @@ public class postNewItem extends AppCompatActivity  {
     private String selectedCondition;
     private String selectedQuantity;
 
-    ImageView submitImage = findViewById(R.id.itemImageView);
 
     Button post;
 
+    private ImageView submitImage; // camera icon, submit an image
+
+
     FirebaseDatabase myDatabase;
     DatabaseReference myDatabaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +58,9 @@ public class postNewItem extends AppCompatActivity  {
 
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                  myDatabase = FirebaseDatabase.getInstance();
-                  myDatabaseReference = myDatabase.getReference("Item Info");
-                  //myDatabaseReference.push().setValue(description.getText().toString());
+                myDatabase = FirebaseDatabase.getInstance();
+                myDatabaseReference = myDatabase.getReference("Item Info");
+                //myDatabaseReference.push().setValue(description.getText().toString());
                 newItemInfo newItem = new newItemInfo(description.getText().toString(),
                         selectedCategory, selectedCondition,
                         selectedDeliveryMethod, selectedQuantity);
@@ -71,9 +70,14 @@ public class postNewItem extends AppCompatActivity  {
             }
 
         });
-
-
     }
+
+    // click action for image submit button
+    public void imageSubmit(View v) {
+        submitImage = findViewById(R.id.itemImageView);
+        Toast.makeText(this,"Image Submitted!",Toast.LENGTH_LONG).show(); // test to make sure it works
+    }
+
 
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
