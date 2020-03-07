@@ -1,3 +1,5 @@
+// Project B Team 1
+// Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 
 import edu.vcu.cmsc.softwareengineering.donationapp.data.LoginData;
 

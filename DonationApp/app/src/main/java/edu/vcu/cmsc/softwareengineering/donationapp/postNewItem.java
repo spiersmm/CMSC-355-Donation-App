@@ -54,6 +54,7 @@ public class postNewItem extends AppCompatActivity  {
         final EditText description = (EditText) findViewById(R.id.editTextDescription);
         post = findViewById(R.id.PostNewItem);
 
+        // store item information in database when post new item button is pushed
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                   myDatabase = FirebaseDatabase.getInstance();
@@ -63,6 +64,7 @@ public class postNewItem extends AppCompatActivity  {
                         selectedCategory, selectedDeliveryMethod,
                         selectedCondition, selectedQuantity);
                 myDatabaseReference.push().setValue(newItem);
+                // when item is posted go back to donor main screen
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
             }

@@ -1,5 +1,8 @@
+// Project B Team 1
+// CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
+// class for storing all new Item info that is being posted by a donor
 public class newItemInfo {
     public String itemDescription;
     public String itemCategory;
