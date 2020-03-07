@@ -1,5 +1,6 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
-
+// Project B Team 1
+// CMSC 355 Spring 2020
 import android.content.Intent;
 import android.os.Bundle;
 

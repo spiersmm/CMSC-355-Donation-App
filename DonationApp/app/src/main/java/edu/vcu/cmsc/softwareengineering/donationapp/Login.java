@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import edu.vcu.cmsc.softwareengineering.donationapp.data.LoginData;
-
+// Project B Team 1
+// CMSC 355 Spring 2020
 /**
  * currently this class starts the app. The data entered by the user is handled
  * in a 'LoginData' object.

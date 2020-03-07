@@ -1,3 +1,5 @@
+// Project B Team 1
+// CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.app.Activity;
