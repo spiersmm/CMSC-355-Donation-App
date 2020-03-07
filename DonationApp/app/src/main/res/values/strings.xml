@@ -24,4 +24,5 @@
     <string name="quantity">Quantity</string>
     <string name="post">Post</string>
     <string name="delete">Delete</string>
+    <string name="submit_image">Submit Image</string>
 </resources>

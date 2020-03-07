@@ -35,6 +35,8 @@ public class postNewItem extends AppCompatActivity  {
     private String selectedCondition;
     private String selectedQuantity;
 
+    ImageView submitImage = findViewById(R.id.itemImageView);
+
     Button post;
 
     FirebaseDatabase myDatabase;
