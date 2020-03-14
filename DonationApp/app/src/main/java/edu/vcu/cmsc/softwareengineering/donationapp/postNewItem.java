@@ -90,6 +90,7 @@ public class postNewItem extends AppCompatActivity  {
         categoryItems.add("Toiletries");
         categoryItems.add("Games/Toys");
         categoryItems.add("Books");
+        categoryItems.add("Electronics");
         categoryItems.add("Other");
 
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this,
