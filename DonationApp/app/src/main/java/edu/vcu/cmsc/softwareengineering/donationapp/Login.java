@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
 
 		Button loginButton = findViewById(R.id.DonorLoginButton);
 		Button donorSignupButton = findViewById(R.id.DonorSignupButton);
+		Button recipientSignUpButton = findViewById(R.id.RecipientSignupButton);
 		
 		// data = new LoginData(findViewById(R.id.usernameEditText),
 		//			 findViewById(R.id.passwordEditText),
@@ -51,6 +52,14 @@ public class Login extends AppCompatActivity {
 				Intent donorSignup = new Intent(getApplicationContext(), DonorSignup.class);
 
 				startActivity(donorSignup);
+			}
+		});
+		recipientSignUpButton.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				Intent recipientSignup = new Intent(getApplicationContext(), RecipientSignUp.class);
+
+				startActivity(recipientSignup);
 			}
 		});
 	}
