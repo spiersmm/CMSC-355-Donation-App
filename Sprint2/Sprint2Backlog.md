@@ -13,4 +13,6 @@ Sprint 2 Backlog
     - As a recipient, I want to be able to see what items have been posted, so that I can find what items I need
   - Edit Post
     - As a donor, I want to be able to edit my item posts, so that recipients can have accurate information about my items
+  - Delete Post
+    - As a donator, I want to be able to delete a post, so recipients know this is item is no longer available
   
