@@ -26,6 +26,7 @@ public class Login extends AppCompatActivity {
 		setContentView(R.layout.activity_login);
 
 		Button loginButton = findViewById(R.id.DonorLoginButton);
+		Button donorSignupButton = findViewById(R.id.DonorSignupButton);
 		
 		// data = new LoginData(findViewById(R.id.usernameEditText),
 		//			 findViewById(R.id.passwordEditText),
@@ -42,6 +43,14 @@ public class Login extends AppCompatActivity {
 
 				//	intent.putExtra(this.getPackageName(), data.getArgs());
 				startActivity(leaveLogin);
+			}
+		});
+		donorSignupButton.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				Intent donorSignup = new Intent(getApplicationContext(), DonorSignup.class);
+
+				startActivity(donorSignup);
 			}
 		});
 	}
