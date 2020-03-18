@@ -4,11 +4,15 @@
   - This sprint we worked on completing the user story for posting a new item
   - The specific user story stated: As a donator, I want to be able to post an item to donator so that organizations can see them.
   - We were able to complete this user story on the donator side of the app, so the user can post an item and see it on their account and then next sprint we will implement having the posted items show up on the organizations account
+  - We created an espresso test for when a donor posts a new item
 - **Team Reflection**
   - This first sprint was difficult to start because none of us have much experience working with Github as a group, working with Android Studios, or creating databases. So much of this sprint was spent learning how to do simple things, which should allow us to accomplish things easier in future sprints. 
   - Matthew Stewart started the project and created basic UI's for several activities and worked on connecting a temporary login screen to the donor main activity, which is what we did most of our work on this sprint
   - Chloe then worked on creating the UI for the donor main screen and the post new item screen, she created drop down menus for the new item activity to allow users to select from certain options when adding details about the item they are donating
   - Chloe connected the donor main screen to the post new item screen and created a class which will keep all of the item info together and added a realtime Firebase Database to the project to store the item info that is input by the donor
+  - Megan then worked on getting the item information back out of the databse in order to fill the donor main activity screen with the item details of every item that the user has posted creating a framework that can be used for the organization main screen in future sprints as well
+  - Matthew Stewart then cleaned up some of the files and prepped for work on Sprint 2
+  - Matthew Scott Helped create some functionality for submitting donation images
   - As a group we had problems with communication and waiting too long to assign specific roles for what each person will work on this sprint and most of us were not able to start working on the project until late this week because of midterms and work we had to do in other classes
   - We also ran into issues with pulling parts of the project from Github
   - Right now we all have a good idea of how we want the app to work which allowed us to create UI's that follow our storyboard, however, it was just harder for us to learn how to create all of the functionalities we want to incorporate into our app
