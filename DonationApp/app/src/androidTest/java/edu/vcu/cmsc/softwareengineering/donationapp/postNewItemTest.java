@@ -42,7 +42,7 @@ public class postNewItemTest {
     @Test
     public void postNewItemTest() {
         ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.loginButton), withText("Login"),
+                allOf(withId(R.id.DonorLoginButton), withText("Login"),
                         childAtPosition(
                                 allOf(withId(R.id.linearLayout2),
                                         childAtPosition(

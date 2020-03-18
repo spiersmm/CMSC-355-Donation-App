@@ -6,54 +6,91 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
+	<Button
+		android:id="@+id/DonorLoginButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/login"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.845"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView4"
+		app:layout_constraintVertical_bias="0.056" />
+
+	<Button
+		android:id="@+id/RecipientLoginButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/login"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.182"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView2"
+		app:layout_constraintVertical_bias="0.056" />
+
+	<Button
+		android:id="@+id/DonorSignupButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/sign_up"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.845"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/DonorLoginButton"
+		app:layout_constraintVertical_bias="0.133" />
+
+	<Button
+		android:id="@+id/RecipientSignupButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/sign_up"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.182"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/RecipientLoginButton"
+		app:layout_constraintVertical_bias="0.133" />
+
 	<TextView
 		android:id="@+id/textView"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginStart="20dp"
-		android:layout_marginLeft="20dp"
-		android:layout_marginTop="20dp"
-		android:text="@string/username"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<EditText
-		android:id="@+id/usernameEditText"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
+		android:text="Welcome"
+		android:textSize="21sp"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="@+id/textView"
-		app:layout_constraintTop_toBottomOf="@+id/textView"
-		tools:ignore="Autofill,LabelFor,TextFields" />
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.072" />
 
 	<TextView
 		android:id="@+id/textView2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-		android:text="@string/password"
-		app:layout_constraintStart_toStartOf="@+id/usernameEditText"
-		app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
-
-	<EditText
-		android:id="@+id/passwordEditText"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:inputType="textPassword"
+		android:text="Recipient"
+		android:textSize="21sp"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="@+id/textView2"
-		app:layout_constraintTop_toBottomOf="@+id/textView2"
-		tools:ignore="Autofill,LabelFor,TextFields" />
+		app:layout_constraintHorizontal_bias="0.182"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView"
+		app:layout_constraintVertical_bias="0.27" />
 
-	<Button
-		android:id="@+id/loginButton"
+	<TextView
+		android:id="@+id/textView4"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="100dp"
-		android:text="@string/login"
-		app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
-		app:layout_constraintStart_toStartOf="@+id/passwordEditText"
-		app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+		android:text="@string/donor"
+		android:textSize="21sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.811"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView"
+		app:layout_constraintVertical_bias="0.269" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
