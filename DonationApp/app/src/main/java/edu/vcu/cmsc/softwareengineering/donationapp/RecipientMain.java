@@ -62,12 +62,124 @@ public class RecipientMain extends AppCompatActivity {
 
 
 
+	/**
+	 *  method to create dropdown for category filter
+	 *  to select from available, or recieved items.
+	 */
+	public void createFilterCategorySpinner() {
+		final Spinner itemRecord = findViewById(R.id.ItemRecord);
+
+		List<String> itemRecordItems = new ArrayList<>();
+		itemRecordItems.add("Available");
+		itemRecordItems.add("Recieved");
+
+		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
+		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		itemRecord.setAdapter(itemRecordAdapter);
+		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				/* TODO */
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				/* TODO */
+			}
+		});
+	} // end createItemRecordSpinner()
 
 
 
 
 
+	/**
+	 *  method to create dropdown for item record
+	 *  to select from available, or recieved items.
+	 */
+	public void createFilterDeliverySpinner() {
+		final Spinner itemRecord = findViewById(R.id.ItemRecord);
 
+		List<String> itemRecordItems = new ArrayList<>();
+		itemRecordItems.add("Available");
+		itemRecordItems.add("Recieved");
+
+		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
+		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		itemRecord.setAdapter(itemRecordAdapter);
+		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				/* TODO */
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				/* TODO */
+			}
+		});
+	} // end createItemRecordSpinner()
+
+
+
+	/**
+	 *  method to create dropdown for item record
+	 *  to select from available, or recieved items.
+	 */
+	public void createFilterConditionSpinner() {
+		final Spinner itemRecord = findViewById(R.id.ItemRecord);
+
+		List<String> itemRecordItems = new ArrayList<>();
+		itemRecordItems.add("Available");
+		itemRecordItems.add("Recieved");
+
+		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
+		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		itemRecord.setAdapter(itemRecordAdapter);
+		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				/* TODO */
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				/* TODO */
+			}
+		});
+	} // end createItemRecordSpinner()
+
+
+	/**
+	 *  method to create dropdown for item record
+	 *  to select from available, or recieved items.
+	 */
+	public void createFilterQuantitySpinner() {
+		final Spinner itemRecord = findViewById(R.id.ItemRecord);
+
+		List<String> itemRecordItems = new ArrayList<>();
+		itemRecordItems.add("Available");
+		itemRecordItems.add("Recieved");
+
+		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
+		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		itemRecord.setAdapter(itemRecordAdapter);
+		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				/* TODO */
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				/* TODO */
+			}
+		});
+	} // end createItemRecordSpinner()
 
 
 

@@ -7,34 +7,34 @@
 	tools:context=".RecipientMain">
 
 	<Spinner
-		android:id="@+id/Condition"
+		android:id="@+id/FilterDelivery"
 		android:layout_width="135dp"
 		android:layout_height="35dp"
-		android:layout_marginEnd="28dp"
+		android:layout_marginEnd="36dp"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/Delivery Method" />
+		app:layout_constraintTop_toBottomOf="@+id/FilterCategory" />
 
 	<Spinner
-		android:id="@+id/Quantity"
+		android:id="@+id/FilterCondition"
 		android:layout_width="135dp"
 		android:layout_height="35dp"
-		android:layout_marginEnd="28dp"
+		android:layout_marginEnd="36dp"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/Condition" />
+		app:layout_constraintTop_toBottomOf="@+id/FilterDelivery" />
 
 	<Spinner
-		android:id="@+id/Delivery Method"
+		android:id="@+id/FilterQuantity"
 		android:layout_width="135dp"
 		android:layout_height="35dp"
-		android:layout_marginEnd="28dp"
+		android:layout_marginEnd="36dp"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/Category" />
+		app:layout_constraintTop_toBottomOf="@+id/FilterCondition" />
 
 	<Spinner
-		android:id="@+id/Category"
+		android:id="@+id/FilterCategory"
 		android:layout_width="135dp"
 		android:layout_height="35dp"
-		android:layout_marginEnd="28dp"
+		android:layout_marginEnd="36dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/FilterLabel" />
 
@@ -67,5 +67,17 @@
 		android:text="@string/filter"
 		app:layout_constraintStart_toEndOf="@+id/itemRecordLabel"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/RefreshList"
+		android:tooltipText="Refresh Lists"
+		android:layout_width="67dp"
+		android:layout_height="56dp"
+		android:layout_marginTop="16dp"
+		app:layout_constraintEnd_toStartOf="@+id/FilterCategory"
+		app:layout_constraintStart_toEndOf="@+id/ItemRecord"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@color/common_google_signin_btn_text_dark_focused"
+		tools:srcCompat="@android:drawable/ic_popup_sync" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
