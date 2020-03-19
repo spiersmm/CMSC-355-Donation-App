@@ -46,4 +46,12 @@
     <string name="create_recipient_account">Create Recipient Account</string>
     <string name="enter_registration_number">Enter Registration Number</string>
     <string name="item_record">Item Record</string>
+    <string name="filter">Filter</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="clothes">Clothes</string>
+    <string name="food">Food</string>
+    <string name="furniture">Furniture</string>
+    <string name="toiletries">Toiletries</string>
+    <string name="games_ntoys">Games\nToys</string>
+    <string name="games_toys">Games / Toys</string>
 </resources>
