@@ -3,23 +3,23 @@ The team is to meet for 10 days during the two-week sprint - 5 meetings per week
 
 Question    |          Person                                             | day | day | day | day | day | day | day |day | day | day |
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
-| What did you complete since the last meeting? | Chloe Adzima |   
+| What did you complete since the last meeting? | Chloe Adzima | Met with TA to demo Sprint 1 and created activities for donor and recipient sign up 
 |            | Megan Spiers | Had virtual sprint 1 meeting with TA and confirmed path for sprint 2   
 |            | Matthew Scott |   
 |            | Matthew Stewart |
-| What will you accomplish before the next meeting? | Chloe Adzima | 
+| What will you accomplish before the next meeting? | Chloe Adzima | Create activities for donor and recipient login
 |            | Megan Spiers | Start sprint 2
 |            | Matthew Scott |   
 |            | Matthew Stewart |
-| Do you have anything that's getting in the way of doing your work? | Chloe Adzima | 
+| Do you have anything that's getting in the way of doing your work? | Chloe Adzima | no
 |            | Megan Spiers | Not yet
 |            | Matthew Scott |   
 |            | Matthew Stewart |
-| What insights have you made? |Chloe Adzima | 
+| What insights have you made? |Chloe Adzima | none yet
 |            | Megan Spiers | Learn more about database manipulation 
 |            | Matthew Scott |   
 |            | Matthew Stewart |
-| Do any changes to the project need to be made as a result of your work? |Chloe Adzima | 
+| Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Need to fix donor login so it goes to login screen instead of main activity
 |            | Megan Spiers | Not yet 
 |            | Matthew Scott |   
 |            | Matthew Stewart |
