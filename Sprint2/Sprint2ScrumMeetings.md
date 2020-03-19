@@ -4,22 +4,22 @@ The team is to meet for 10 days during the two-week sprint - 5 meetings per week
 Question    |          Person                                             | day | day | day | day | day | day | day |day | day | day |
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
 | What did you complete since the last meeting? | Chloe Adzima |   
-|            | Megan Spiers |   
+|            | Megan Spiers | Had virtual sprint 1 meeting with TA and confirmed path for sprint 2   
 |            | Matthew Scott |   
 |            | Matthew Stewart |
 | What will you accomplish before the next meeting? | Chloe Adzima | 
-|            | Megan Spiers |   
+|            | Megan Spiers | Start sprint 2
 |            | Matthew Scott |   
 |            | Matthew Stewart |
 | Do you have anything that's getting in the way of doing your work? | Chloe Adzima | 
-|            | Megan Spiers |   
+|            | Megan Spiers | Not yet
 |            | Matthew Scott |   
 |            | Matthew Stewart |
 | What insights have you made? |Chloe Adzima | 
-|            | Megan Spiers |   
+|            | Megan Spiers | Learn more about database manipulation 
 |            | Matthew Scott |   
 |            | Matthew Stewart |
 | Do any changes to the project need to be made as a result of your work? |Chloe Adzima | 
-|            | Megan Spiers |   
+|            | Megan Spiers | Not yet 
 |            | Matthew Scott |   
 |            | Matthew Stewart |
