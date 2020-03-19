@@ -45,4 +45,5 @@
     <string name="recipient">Recipient</string>
     <string name="create_recipient_account">Create Recipient Account</string>
     <string name="enter_registration_number">Enter Registration Number</string>
+    <string name="item_record">Item Record</string>
 </resources>

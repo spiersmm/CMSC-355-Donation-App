@@ -30,6 +30,11 @@ public class RecipientMain extends AppCompatActivity {
 
 
 
+
+	/**
+	 *  method to create dropdown for item record
+	 *  to select from available, or recieved items.
+	 */
 	public void createItemRecordSpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
 
@@ -53,6 +58,27 @@ public class RecipientMain extends AppCompatActivity {
 				}
 			});
 	} // end createItemRecordSpinner()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 } // end class
