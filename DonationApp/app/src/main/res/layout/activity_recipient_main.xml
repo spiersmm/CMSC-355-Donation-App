@@ -6,4 +6,12 @@
 		android:layout_height="match_parent"
 		tools:context=".RecipientMain">
 
+	<Spinner
+		android:id="@+id/ItemRecord"
+		android:layout_width="135dp"
+		android:layout_height="42dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
