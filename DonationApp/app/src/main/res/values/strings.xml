@@ -45,16 +45,6 @@
     <string name="recipient">Recipient</string>
     <string name="create_recipient_account">Create Recipient Account</string>
     <string name="enter_registration_number">Enter Registration Number</string>
-    <string name="item_record">Item Record</string>
-    <string name="filter">Filter</string>
-    <string name="checkbox">CheckBox</string>
-    <string name="clothes">Clothes</string>
-    <string name="food">Food</string>
-    <string name="furniture">Furniture</string>
-    <string name="toiletries">Toiletries</string>
-    <string name="games_ntoys">Games\nToys</string>
-    <string name="games_toys">Games / Toys</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="checkbox">CheckBox</string>
+    <string name="donor_login">Donor Login</string>
+    <string name="recipient_login">Recipient Login</string>
 </resources>

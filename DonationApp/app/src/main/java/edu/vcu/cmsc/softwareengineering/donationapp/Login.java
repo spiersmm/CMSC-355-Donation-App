@@ -28,16 +28,18 @@ public class Login extends AppCompatActivity {
 		Button loginButton = findViewById(R.id.DonorLoginButton);
 		Button donorSignupButton = findViewById(R.id.DonorSignupButton);
 		Button recipientSignUpButton = findViewById(R.id.RecipientSignupButton);
+		Button recipientLoginButton = findViewById(R.id.RecipientLoginButton);
 		
 		// data = new LoginData(findViewById(R.id.usernameEditText),
 		//			 findViewById(R.id.passwordEditText),
 		//			 findViewById(R.id.loginButton));
-		 
+
+		// goes to Donor Login screen
 		loginButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				//if (data.goesToDonor()) {
-				Intent leaveLogin = new Intent(getApplicationContext(), DonorMain.class);
+				Intent leaveLogin = new Intent(getApplicationContext(), DonorLogin.class);
 				//} else {
 				//	intent = new Intent(this, PostListActivity.class);
 				//}
@@ -46,6 +48,7 @@ public class Login extends AppCompatActivity {
 				startActivity(leaveLogin);
 			}
 		});
+		// goes to Donor signup screen
 		donorSignupButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
@@ -54,12 +57,22 @@ public class Login extends AppCompatActivity {
 				startActivity(donorSignup);
 			}
 		});
+		// goes to recipient signup screen
 		recipientSignUpButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				Intent recipientSignup = new Intent(getApplicationContext(), RecipientSignUp.class);
 
 				startActivity(recipientSignup);
+			}
+		});
+		// goes to recipient login screen
+		recipientLoginButton.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				Intent recipientLogin = new Intent(getApplicationContext(), RecipientLogin.class);
+
+				startActivity(recipientLogin);
 			}
 		});
 	}
