@@ -70,7 +70,6 @@
 
 	<ImageView
 		android:id="@+id/RefreshList"
-		android:tooltipText="Refresh Lists"
 		android:layout_width="67dp"
 		android:layout_height="56dp"
 		android:layout_marginTop="16dp"
@@ -78,6 +77,37 @@
 		app:layout_constraintStart_toEndOf="@+id/ItemRecord"
 		app:layout_constraintTop_toTopOf="parent"
 		app:srcCompat="@color/common_google_signin_btn_text_dark_focused"
-		tools:srcCompat="@android:drawable/ic_popup_sync" />
+		tools:srcCompat="@android:drawable/ic_popup_sync"
+		android:contentDescription="@string/todo" />
+
+	<ListView
+		android:id="@+id/rmListView"
+		android:layout_width="wrap_content"
+		android:layout_height="265dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.432"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/imageView2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="28dp"
+		android:layout_marginEnd="48dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/rmListView"
+		app:srcCompat="@android:drawable/ic_search_category_default"
+		android:contentDescription="@string/todo" />
+
+	<CheckBox
+		android:id="@+id/FilterTest"
+		android:layout_width="135dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="36dp"
+		android:text="CheckBox"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/FilterQuantity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
