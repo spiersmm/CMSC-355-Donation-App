@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".RecipientSignUp"></activity>
+        <activity android:name=".RecipientLogin"></activity>
+        <activity android:name=".DonorLogin" />
+        <activity android:name=".RecipientSignUp" />
         <activity android:name=".DonorSignup" />
         <activity android:name=".postNewItem" />
         <activity android:name=".Login">

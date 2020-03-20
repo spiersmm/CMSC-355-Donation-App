@@ -45,4 +45,6 @@
     <string name="recipient">Recipient</string>
     <string name="create_recipient_account">Create Recipient Account</string>
     <string name="enter_registration_number">Enter Registration Number</string>
+    <string name="donor_login">Donor Login</string>
+    <string name="recipient_login">Recipient Login</string>
 </resources>
