@@ -32,7 +32,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 	/**
-	 *  method to create dropdown for item record
+	 *  method to create spinner for item record
 	 *  to select from available, or recieved items.
 	 */
 	public void createItemRecordSpinner() {
@@ -63,8 +63,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 	/**
-	 *  method to create dropdown for category filter
-	 *  to select from available, or recieved items.
+	 *  method to create spinner for category filter
 	 */
 	public void createFilterCategorySpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
@@ -88,15 +87,14 @@ public class RecipientMain extends AppCompatActivity {
 				/* TODO */
 			}
 		});
-	} // end createItemRecordSpinner()
+	} // end createFilterCategorySpinner
 
 
 
 
 
 	/**
-	 *  method to create dropdown for item record
-	 *  to select from available, or recieved items.
+	 *  method to create spinner
 	 */
 	public void createFilterDeliverySpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
@@ -120,13 +118,12 @@ public class RecipientMain extends AppCompatActivity {
 				/* TODO */
 			}
 		});
-	} // end createItemRecordSpinner()
+	}
 
 
 
 	/**
-	 *  method to create dropdown for item record
-	 *  to select from available, or recieved items.
+	 *  method to create spinner
 	 */
 	public void createFilterConditionSpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
@@ -150,12 +147,11 @@ public class RecipientMain extends AppCompatActivity {
 				/* TODO */
 			}
 		});
-	} // end createItemRecordSpinner()
+	}
 
 
 	/**
-	 *  method to create dropdown for item record
-	 *  to select from available, or recieved items.
+	 *  method to create spinner
 	 */
 	public void createFilterQuantitySpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
@@ -179,7 +175,7 @@ public class RecipientMain extends AppCompatActivity {
 				/* TODO */
 			}
 		});
-	} // end createItemRecordSpinner()
+	}
 
 
 

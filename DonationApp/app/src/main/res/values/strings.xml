@@ -56,4 +56,5 @@
     <string name="games_toys">Games / Toys</string>
     <string name="todo">TODO</string>
     <string name="todo">TODO</string>
+    <string name="checkbox">CheckBox</string>
 </resources>
