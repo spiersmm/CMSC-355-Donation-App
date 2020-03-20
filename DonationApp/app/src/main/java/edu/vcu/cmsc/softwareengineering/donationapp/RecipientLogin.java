@@ -16,5 +16,13 @@ public class RecipientLogin extends AppCompatActivity {
 
         Button loginButton = findViewById(R.id.buttonRecipientLogin);
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent recipientLogin = new Intent(getApplicationContext(), RecipientMain.class);
+                startActivity(recipientLogin);
+            }
+        });
+
     }
 }
