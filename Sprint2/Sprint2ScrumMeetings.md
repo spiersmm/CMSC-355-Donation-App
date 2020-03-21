@@ -18,9 +18,9 @@ Question    |          Person                                             | day 
 |            | Matthew Stewart |
 | What insights have you made? |Chloe Adzima | none yet | Becoming more familier with creating and connecting activities in Android Studios | Learned how to use toast
 |            | Megan Spiers | Learn more about database manipulation | Learn more about image Submission | More research about image submission
-|            | Matthew Scott |   nothing yet | widget methods and database interactivity | how to customize widgets with XMl
+|            | Matthew Scott |   nothing yet | widget methods and database interactivity | how to customize widgets with XML
 |            | Matthew Stewart |
 | Do any changes to the project need to be made as a result of your work? |Chloe Adzima | Need to fix donor login so it goes to login screen instead of main activity | May need to rename some variable names for getting data in future | no
 |            | Megan Spiers | Not yet | Not Yet | Not yet
-|            | Matthew Scott |   not yet | need to link other activities to this new one
+|            | Matthew Scott |   not yet | need to link other activities to this new one | not yet
 |            | Matthew Stewart |
