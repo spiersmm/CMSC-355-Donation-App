@@ -66,12 +66,12 @@ public class RecipientSignUp extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(TextUtils.isEmpty(number)) {
-                    Toast.makeText(getApplicationContext(), "Please enter your organizations registration number", Toast.LENGTH_LONG).show();
-                    return;
-                }
                 if(!Patterns.PHONE.matcher(phone).matches()) {
                     Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(number)) {
+                    Toast.makeText(getApplicationContext(), "Please enter your organizations registration number", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if(TextUtils.isEmpty(username)) {

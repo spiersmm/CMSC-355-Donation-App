@@ -91,9 +91,21 @@ public class DonorSignup extends AppCompatActivity {
                    String year = dobParts[2];
                    Calendar cal = Calendar.getInstance();
                    int thisYear = cal.get(Calendar.YEAR);
+                   int thisMonth = cal.get(Calendar.MONTH);
+                   thisMonth++;
+                   int thisDay = cal.get(Calendar.DAY_OF_MONTH);
+
                    if(thisYear - Integer.parseInt(year) < 18) {
                         Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
                         return;
+                   }
+                   if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) < 0) {
+                        Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
+                        return;
+                   }
+                   if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) == 0 && thisDay - Integer.parseInt(day) < 0) {
+                       Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
+                       return;
                    }
                 if(TextUtils.isEmpty(username)) {
                     Toast.makeText(getApplicationContext(), "Please enter a username", Toast.LENGTH_LONG).show();
