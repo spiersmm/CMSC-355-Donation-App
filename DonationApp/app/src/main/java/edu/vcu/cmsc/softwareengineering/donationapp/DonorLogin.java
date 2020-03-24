@@ -61,6 +61,9 @@ public class DonorLogin extends AppCompatActivity {
 
                 email = donorEmail.getText().toString();
                 password = donorPassword.getText().toString();
+
+                auth = FirebaseAuth.getInstance();
+
                 if(TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
                     return;
