@@ -25,6 +25,8 @@ public class DonorLogin extends AppCompatActivity {
     String email, password;
     private FirebaseAuth auth;
 
+
+
     public void login(String emailDonor, String passwordDonor) {
         auth.signInWithEmailAndPassword(emailDonor, passwordDonor)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

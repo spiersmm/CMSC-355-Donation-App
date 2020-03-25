@@ -25,7 +25,7 @@ import java.util.Calendar;
 
 public class DonorSignup extends AppCompatActivity {
 
-    EditText donorName, donorEmail, donorPhone, donorDOB, donorUsername, donorPassword;
+    EditText donorName, donorEmail, donorPhone, donorDOB, donorPassword;
     Button donorSignupButton;
     private FirebaseAuth auth;
 
@@ -64,7 +64,6 @@ public class DonorSignup extends AppCompatActivity {
         donorEmail = findViewById(R.id.editTextDonorEmail);
         donorPhone = findViewById(R.id.editTextDonorPhone);
         donorDOB = findViewById(R.id.editTextDonorDOB);
-        donorUsername = findViewById(R.id.editTextDonorUsernameSignup);
         donorPassword = findViewById(R.id.editTextDonorPasswordSignup);
 
         donorSignupButton = findViewById(R.id.buttonDonorSignup);
@@ -83,7 +82,6 @@ public class DonorSignup extends AppCompatActivity {
                 String email = donorEmail.getText().toString();
                 String phone = donorPhone.getText().toString();
                 String dob = donorDOB.getText().toString();
-                String username = donorUsername.getText().toString();
                 String password = donorPassword.getText().toString();
 
                 // make sure sign up boxes are not empty and input is valid
@@ -139,10 +137,6 @@ public class DonorSignup extends AppCompatActivity {
                        Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
                        return;
                    }
-                if(TextUtils.isEmpty(username)) {
-                    Toast.makeText(getApplicationContext(), "Please enter a username", Toast.LENGTH_LONG).show();
-                    return;
-                }
                 if(TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Please enter a valid password", Toast.LENGTH_LONG).show();
                     return;
