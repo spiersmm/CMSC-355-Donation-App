@@ -26,7 +26,6 @@ public class DonorLogin extends AppCompatActivity {
     private FirebaseAuth auth;
 
 
-
     public void login(String emailDonor, String passwordDonor) {
         auth.signInWithEmailAndPassword(emailDonor, passwordDonor)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -37,12 +36,25 @@ public class DonorLogin extends AppCompatActivity {
                             FirebaseUser user = auth.getCurrentUser();
                             Intent donorlogin = new Intent(getApplicationContext(), DonorMain.class);
                             startActivity(donorlogin);
-                        }
-                        else {
+                        } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "Login Failed!",
                                     Toast.LENGTH_LONG).show();
                             return;
+                        }
+                    }
+                });
+    }
+
+    public void sendForgotPasswordEmail(String emailtoSend) {
+        auth.sendPasswordResetEmail(emailtoSend)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -54,6 +66,8 @@ public class DonorLogin extends AppCompatActivity {
         setContentView(R.layout.activity_donor_login);
 
         Button loginButton = findViewById(R.id.buttonDonorLogin);
+        Button forgotPasswordButton = findViewById(R.id.buttonDonorForgotPassword);
+        auth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
 
@@ -64,17 +78,26 @@ public class DonorLogin extends AppCompatActivity {
                 email = donorEmail.getText().toString();
                 password = donorPassword.getText().toString();
 
-                auth = FirebaseAuth.getInstance();
-
-                if(TextUtils.isEmpty(email)) {
+                if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Please enter your password", Toast.LENGTH_LONG).show();
                     return;
                 }
                 login(email, password);
+            }
+        });
+        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                donorEmail = findViewById(R.id.editTextDonorUsernameLogin);
+                email = donorEmail.getText().toString();
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                sendForgotPasswordEmail(email);
             }
         });
     }
