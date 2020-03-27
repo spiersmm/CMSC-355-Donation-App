@@ -100,4 +100,13 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/FilterCategory" />
 
+	<ListView
+		android:id="@+id/rmListView"
+		android:layout_width="381dp"
+		android:layout_height="295dp"
+		android:layout_marginTop="176dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/RefreshList" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
