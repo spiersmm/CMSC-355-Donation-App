@@ -2,15 +2,20 @@
 // CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RecipientMain extends AppCompatActivity {
@@ -29,11 +34,9 @@ public class RecipientMain extends AppCompatActivity {
 
 
 
-
-
 	/**
 	 *  method to create spinner for item record
-	 *  to select from available, or recieved items.
+	 *  to select from available, or received items.
 	 */
 	public void createItemRecordSpinner() {
 		final Spinner itemRecord = findViewById(R.id.ItemRecord);
@@ -46,6 +49,7 @@ public class RecipientMain extends AppCompatActivity {
 			itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 			itemRecord.setAdapter(itemRecordAdapter);
+
 			itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				@Override
 				public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -62,120 +66,90 @@ public class RecipientMain extends AppCompatActivity {
 
 
 
-	/**
-	 *  method to create spinner for category filter
-	 */
-	public void createFilterCategorySpinner() {
-		final Spinner itemRecord = findViewById(R.id.ItemRecord);
 
-		List<String> itemRecordItems = new ArrayList<>();
-		itemRecordItems.add("Available");
-		itemRecordItems.add("Recieved");
 
-		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
-		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-		itemRecord.setAdapter(itemRecordAdapter);
-		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+	/*
+    Method for filter button and multiple choice popup dialog
+    consists of inner .setMultiChoiceItems() method for the checkbox list
+    .setPositivebutton() method for an 'ok' button
+    .setNeutralButton() method for a 'cancel' button
+     */
+	public void filterCategory(View view) {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
+		builder.setTitle("Category Filter"); // set title of dialog
+
+
+		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
+		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes ( seems to be required )
+		final List<String> list = Arrays.asList(options);
+
+        /*
+        Method for the actual multiple choice checkbox popup, containing onlick listener
+        setMultiChoiceItems()
+         */
+		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
 			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				/* TODO */
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				/* TODO */
-			}
-		});
-	} // end createFilterCategorySpinner
+			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
 
+				checked[which] = isChecked;
+				String currentItem = list.get(which);
+
+				Toast.makeText(RecipientMain.this,currentItem + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
 
 
-
-	/**
-	 *  method to create spinner
-	 */
-	public void createFilterDeliverySpinner() {
-		final Spinner itemRecord = findViewById(R.id.ItemRecord);
-
-		List<String> itemRecordItems = new ArrayList<>();
-		itemRecordItems.add("Available");
-		itemRecordItems.add("Recieved");
-
-		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
-		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		itemRecord.setAdapter(itemRecordAdapter);
-		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				/* TODO */
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				/* TODO */
 			}
 		});
+
+
+        /*
+        Method for the ok button and onclick handler
+         */
+		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Toast.makeText(RecipientMain.this,"ok button was clicked", Toast.LENGTH_SHORT).show();
+			}
+		});
+
+
+        /*
+        Method for the cancel button and onclick handler (neutral for now)
+        there is also a setNegativeButton method
+         */
+
+		builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Toast.makeText(RecipientMain.this,"cancel button was clicked", Toast.LENGTH_SHORT).show();
+			}
+		});
+
+
+
+		builder.show(); // methood to show the popup dialog
+
+
 	}
 
 
 
-	/**
-	 *  method to create spinner
-	 */
-	public void createFilterConditionSpinner() {
-		final Spinner itemRecord = findViewById(R.id.ItemRecord);
-
-		List<String> itemRecordItems = new ArrayList<>();
-		itemRecordItems.add("Available");
-		itemRecordItems.add("Recieved");
-
-		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
-		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		itemRecord.setAdapter(itemRecordAdapter);
-		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				/* TODO */
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				/* TODO */
-			}
-		});
-	}
 
 
-	/**
-	 *  method to create spinner
-	 */
-	public void createFilterQuantitySpinner() {
-		final Spinner itemRecord = findViewById(R.id.ItemRecord);
 
-		List<String> itemRecordItems = new ArrayList<>();
-		itemRecordItems.add("Available");
-		itemRecordItems.add("Recieved");
 
-		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
-		itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-		itemRecord.setAdapter(itemRecordAdapter);
-		itemRecord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				/* TODO */
-			}
 
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				/* TODO */
-			}
-		});
-	}
+
+
+
+
+
+
+
+
 
 
 

@@ -47,4 +47,7 @@
     <string name="enter_registration_number">Enter Registration Number</string>
     <string name="donor_login">Donor Login</string>
     <string name="recipient_login">Recipient Login</string>
+    <string name="item_record">Item Record</string>
+    <string name="filter">Filter</string>
+    <string name="category">Category</string>
 </resources>
