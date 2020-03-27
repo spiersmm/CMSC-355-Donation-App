@@ -104,17 +104,6 @@
         app:layout_constraintTop_toBottomOf="@+id/testCondition"
         app:layout_constraintVertical_bias="0.172" />
 
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:text="@string/delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewItem" />
-
     <Spinner
         android:id="@+id/spinnerCategories"
         android:layout_width="194dp"
@@ -175,7 +164,7 @@
         android:layout_width="84dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="submitImage"
+        android:contentDescription="@string/submitimage"
         android:onClick="imageSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +179,9 @@
         android:id="@+id/editTextDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/enter_description"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,5 +189,18 @@
         app:layout_constraintStart_toEndOf="@+id/Enterdescription"
         app:layout_constraintTop_toBottomOf="@+id/itemImageView"
         app:layout_constraintVertical_bias="0.09" />
+
+    <Button
+        android:id="@+id/chooseImageButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="130dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/choose_image"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemImageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,4 +52,6 @@
     <string name="category">Category</string>
     <string name="delivery">Delivery</string>
     <string name="date">Date</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="submitimage">submitImage</string>
 </resources>
