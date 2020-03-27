@@ -142,11 +142,11 @@ public class RecipientMain extends AppCompatActivity {
 	public void filterCondition(View view) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
-		builder.setTitle("Category Filter"); // set title of dialog
+		builder.setTitle("Condition Filter"); // set title of dialog
 
 
-		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes ( seems to be required )
+		final String[] options = { "Perfect", "Ok", "Poor" };    // options for the popup
+		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes ( seems to be required )
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -206,11 +206,11 @@ public class RecipientMain extends AppCompatActivity {
 	public void filterDate(View view) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
-		builder.setTitle("Category Filter"); // set title of dialog
+		builder.setTitle("Date Filter"); // set title of dialog
 
 
-		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes ( seems to be required )
+		final String[] options = { "Within 5 days", "Within 10 days", "Within 30 days" };    // options for the popup
+		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes ( seems to be required )
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -273,11 +273,11 @@ public class RecipientMain extends AppCompatActivity {
 	public void filterDelivery(View view) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
-		builder.setTitle("Category Filter"); // set title of dialog
+		builder.setTitle("Delivery Method"); // set title of dialog
 
 
-		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes ( seems to be required )
+		final String[] options = { "Pickup", "Delivery" };    // options for the popup
+		final boolean[] checked = new boolean[] { false, false };   // default state of checkboxes ( seems to be required )
 		final List<String> list = Arrays.asList(options);
 
         /*
