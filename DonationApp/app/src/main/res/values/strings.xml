@@ -50,4 +50,6 @@
     <string name="item_record">Item Record</string>
     <string name="filter">Filter</string>
     <string name="category">Category</string>
+    <string name="delivery">Delivery</string>
+    <string name="date">Date</string>
 </resources>

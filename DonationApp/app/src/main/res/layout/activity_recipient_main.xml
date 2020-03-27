@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/linearLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".RecipientMain">
@@ -25,16 +26,6 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintVertical_bias="1.0" />
-
-	<TextView
-		android:id="@+id/FilterLabel"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="176dp"
-		android:layout_marginTop="12dp"
-		android:text="@string/filter"
-		app:layout_constraintStart_toEndOf="@+id/itemRecordLabel"
-		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
 		android:id="@+id/RefreshList"
@@ -61,12 +52,52 @@
 
 	<Button
 		android:id="@+id/FilterCategory"
-		android:layout_width="wrap_content"
+		android:layout_width="100dp"
 		android:layout_height="wrap_content"
-		android:layout_marginEnd="52dp"
-		android:text="@string/category"
+		android:layout_marginEnd="32dp"
 		android:onClick="filterCategory"
+		android:text="@string/category"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/FilterLabel" />
+
+	<Button
+		android:id="@+id/filterDelivery"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="32dp"
+		android:onClick="filterDelivery"
+		android:text="@string/delivery"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/filterDate" />
+
+	<Button
+		android:id="@+id/filterDate"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="32dp"
+		android:onClick="filterDate"
+		android:text="@string/date"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/filterCondition" />
+
+	<TextView
+		android:id="@+id/FilterLabel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="196dp"
+		android:layout_marginTop="12dp"
+		android:text="@string/filter"
+		app:layout_constraintStart_toEndOf="@+id/itemRecordLabel"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/filterCondition"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="32dp"
+		android:onClick="filterCondition"
+		android:text="@string/condition"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/FilterCategory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
