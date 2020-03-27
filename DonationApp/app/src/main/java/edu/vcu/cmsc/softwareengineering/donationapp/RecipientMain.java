@@ -327,7 +327,12 @@ public class RecipientMain extends AppCompatActivity {
 	}
 
 
-
+	/*
+	Refresh list button method
+	 */
+	public void refresh(View view) {
+		Toast.makeText(RecipientMain.this,"Refresh List", Toast.LENGTH_SHORT).show();
+	}
 
 
 
