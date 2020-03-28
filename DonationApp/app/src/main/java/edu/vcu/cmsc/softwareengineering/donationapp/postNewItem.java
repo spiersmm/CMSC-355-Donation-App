@@ -3,6 +3,7 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +29,9 @@ import com.google.firebase.database.FirebaseDatabase;
 // Activity for having a donor post a new item for donation
 public class postNewItem extends AppCompatActivity  {
 
+
+    private static final int PICK_IMAGE_REQUEST = 1;
+
     // variables for storing item data
     String EnteredDescription;
     private String selectedCategory;
@@ -36,7 +42,11 @@ public class postNewItem extends AppCompatActivity  {
 
     Button post;
 
+    private Button chooseImageButton;
+    private Button uploadImageButton;
     private ImageView submitImage; // camera icon, submit an image
+
+    private Uri ImageUri;
 
 
     FirebaseDatabase myDatabase;
@@ -74,14 +84,44 @@ public class postNewItem extends AppCompatActivity  {
             }
 
         });
-    }
 
-    // click action for image submit button
-    public void imageSubmit(View v) {
+        chooseImageButton = findViewById(R.id.chooseImageButton);
+        uploadImageButton = findViewById(R.id.uploadImageButton);
         submitImage = findViewById(R.id.itemImageView);
-        Toast.makeText(this,"Image Submitted!",Toast.LENGTH_LONG).show(); // test to make sure it works
+
+        chooseImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+
+        uploadImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            ImageUri = data.getData();
+
+            submitImage.setImageURI(ImageUri);
+        }
+    }
 
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
