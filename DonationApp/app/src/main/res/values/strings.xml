@@ -54,4 +54,5 @@
     <string name="date">Date</string>
     <string name="choose_image">Choose Image</string>
     <string name="submitimage">submitImage</string>
+    <string name="upload_image">Upload Image</string>
 </resources>
