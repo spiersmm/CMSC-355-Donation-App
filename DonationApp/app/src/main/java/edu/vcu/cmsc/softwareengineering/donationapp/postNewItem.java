@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,6 +41,7 @@ public class postNewItem extends AppCompatActivity  {
 
     FirebaseDatabase myDatabase;
     DatabaseReference myDatabaseReference;
+    FirebaseUser user;
 
 
     @Override
@@ -59,8 +62,9 @@ public class postNewItem extends AppCompatActivity  {
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 myDatabase = FirebaseDatabase.getInstance();
-                myDatabaseReference = myDatabase.getReference("Item Info");
-                //myDatabaseReference.push().setValue(description.getText().toString());
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
+
                 newItemInfo newItem = new newItemInfo(description.getText().toString(),
                         selectedCategory, selectedCondition,
                         selectedDeliveryMethod, selectedQuantity);

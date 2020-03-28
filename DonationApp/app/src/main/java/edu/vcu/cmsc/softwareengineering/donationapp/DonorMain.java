@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,7 @@ public class DonorMain extends AppCompatActivity {
 	ListView listView;
 	DatabaseReference myDatabaseReference;
 	newItemInfo info;
+	FirebaseUser user;
 
 
 
@@ -37,6 +40,7 @@ public class DonorMain extends AppCompatActivity {
 		setContentView(R.layout.activity_donor_main);
 
 		Button postItemButton = findViewById(R.id.postItem);
+
 
 		postItemButton.setOnClickListener(new View.OnClickListener() {
 
@@ -49,7 +53,7 @@ public class DonorMain extends AppCompatActivity {
 
 
 
-
+		user = FirebaseAuth.getInstance().getCurrentUser();
 		DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 		DatabaseReference newItemInfoRef = rootRef.child("Item Info");
 		ValueEventListener eventListener = new ValueEventListener() {
@@ -58,16 +62,22 @@ public class DonorMain extends AppCompatActivity {
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 				List<String> itemList = new ArrayList<>();
 				for (DataSnapshot ds : dataSnapshot.getChildren()) {
-					String description = ds.child("itemDescription").getValue(String.class);
-					String category = ds.child("itemCategory").getValue(String.class);
-					String condition = ds.child("itemCondition").getValue(String.class);
-					String deliveryMethod = ds.child("itemDeliveryMethod").getValue(String.class);
-					String quantity = ds.child("itemQuantity").getValue(String.class);
-					itemList.add("Description: " + description +
-							", Category: " + category +
-							", Condition: " + condition +
-							", Delivery Method: " + deliveryMethod +
-							", Quantity: " + quantity);
+					// only display data from user that is currently logged in
+					if(ds.getKey().equals(user.getUid())) {
+						for (DataSnapshot ds2 : ds.getChildren()) {
+							String description = ds2.child("itemDescription").getValue(String.class);
+							String category = ds2.child("itemCategory").getValue(String.class);
+							String condition = ds2.child("itemCondition").getValue(String.class);
+							String deliveryMethod = ds2.child("itemDeliveryMethod").getValue(String.class);
+							String quantity = ds2.child("itemQuantity").getValue(String.class);
+							itemList.add("Description: " + description +
+									", Category: " + category +
+									", Condition: " + condition +
+									", Delivery Method: " + deliveryMethod +
+									", Quantity: " + quantity);
+
+						}
+					}
 				}
 				ListView listView = (ListView) findViewById(R.id.dmListView);
 				ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(DonorMain.this,android.R.layout.simple_list_item_1,itemList);
