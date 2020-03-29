@@ -10,11 +10,11 @@
         android:id="@+id/NewItem"
         android:layout_width="392dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="@string/post_new_item"
         android:textAlignment="center"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,144 +22,134 @@
         android:id="@+id/PostNewItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/post"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerQuantity"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toBottomOf="@+id/textQuantity"
+        app:layout_constraintVertical_bias="0.237" />
 
     <TextView
         android:id="@+id/Enterdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="50dp"
         android:text="@string/enter_description"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/TextCategories"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemImageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/itemImageView" />
 
     <TextView
         android:id="@+id/TextCategories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="44dp"
         android:text="@string/categories"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textDelivery"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Enterdescription" />
 
     <TextView
         android:id="@+id/textDelivery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginTop="36dp"
         android:text="@string/delivery_method"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/testCondition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextCategories" />
 
     <TextView
         android:id="@+id/testCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
+        android:layout_marginTop="52dp"
         android:text="@string/condition"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDelivery" />
 
     <TextView
         android:id="@+id/textQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
+        android:layout_marginTop="44dp"
         android:text="@string/quantity"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/PostNewItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testCondition"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintTop_toBottomOf="@+id/testCondition" />
 
     <Spinner
         android:id="@+id/spinnerCategories"
         android:layout_width="194dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginTop="28dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toEndOf="@+id/TextCategories" />
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toEndOf="@+id/TextCategories"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
     <Spinner
         android:id="@+id/spinnerDelivery"
         android:layout_width="194dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginTop="20dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toEndOf="@+id/textDelivery" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/textDelivery"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategories" />
 
     <Spinner
         android:id="@+id/spinnerCondition"
         android:layout_width="194dp"
         android:layout_height="46dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toEndOf="@+id/testCondition"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerDelivery"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDelivery" />
 
     <Spinner
         android:id="@+id/spinnerQuantity"
         android:layout_width="194dp"
         android:layout_height="46dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toEndOf="@+id/textQuantity"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCondition"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCondition" />
 
     <ImageView
         android:id="@+id/itemImageView"
         android:layout_width="150dp"
         android:layout_height="119dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/submitimage"
         android:onClick="imageSubmit"
-        app:layout_constraintEnd_toStartOf="@+id/chooseImageButton"
-        app:layout_constraintHorizontal_bias="0.344"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewItem"
         app:srcCompat="@android:drawable/ic_menu_camera"
@@ -169,15 +159,13 @@
         android:id="@+id/editTextDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/enter_description"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerCategories"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toEndOf="@+id/Enterdescription"
         app:layout_constraintTop_toBottomOf="@+id/uploadImageButton" />
 
@@ -186,23 +174,22 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="130dp"
         android:layout_height="39dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="76dp"
         android:text="@string/choose_image"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toTopOf="@+id/uploadImageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewItem"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintTop_toBottomOf="@+id/NewItem" />
 
     <Button
         android:id="@+id/uploadImageButton"
         android:layout_width="130dp"
         android:layout_height="39dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="76dp"
         android:text="@string/upload_image"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseImageButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
