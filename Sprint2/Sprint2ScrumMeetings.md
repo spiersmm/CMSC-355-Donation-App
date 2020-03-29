@@ -14,7 +14,7 @@ Question    |          Person                                             | day 
 |            | Matthew Stewart |  Find code examples  |  Update my local project and environment  |  Start feature  
 | Do you have anything that's getting in the way of doing your work? | Chloe Adzima | no | need to learn how to make a login Firebase database | Not sure how to verify if someone is 18 years or older | no | no
 |            | Megan Spiers | Not Yet | Not Yet | Not Yet | No | very bad internet service 
-|            | Matthew Scott |   no | not yet | not yet | trouble figuring out different android classes
+|            | Matthew Scott |   no | not yet | not yet | trouble figuring out different android classes | not yet
 |            | Matthew Stewart |  Set back by outdated environment  |  relocating my physical workspace  |  no
 | What insights have you made? |Chloe Adzima | none yet | Becoming more familier with creating and connecting activities in Android Studios | Learned how to use toast | Know how to create a new user account in firebase | understand how to connect a specific user to data in realtime database
 |            | Megan Spiers | Learn more about database manipulation | Learn more about image Submission | More research about image Submission | activities can be reusable | learned to use Picasso 
