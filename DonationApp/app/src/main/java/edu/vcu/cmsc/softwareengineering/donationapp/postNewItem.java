@@ -81,6 +81,7 @@ public class postNewItem extends AppCompatActivity  {
         final EditText description = (EditText) findViewById(R.id.editTextDescription);
         post = findViewById(R.id.PostNewItem);
 
+
         post.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 myDatabase = FirebaseDatabase.getInstance();
@@ -138,7 +139,7 @@ public class postNewItem extends AppCompatActivity  {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadFile() {
+    public void uploadFile() {
         if(ImageUri != null) {
             StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
             + "." + getFileExtension(ImageUri));
