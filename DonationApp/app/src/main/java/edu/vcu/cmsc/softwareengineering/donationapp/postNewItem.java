@@ -2,10 +2,12 @@
 // CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,13 +19,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 
 // Activity for having a donor post a new item for donation
@@ -38,19 +46,23 @@ public class postNewItem extends AppCompatActivity  {
     private String selectedDeliveryMethod;
     private String selectedCondition;
     private String selectedQuantity;
+    private String imageURL;
+
 
 
     Button post;
 
     private Button chooseImageButton;
-    private Button uploadImageButton;
     private ImageView submitImage; // camera icon, submit an image
 
     private Uri ImageUri;
 
 
+
+
     FirebaseDatabase myDatabase;
     DatabaseReference myDatabaseReference;
+    StorageReference myStorageReference;
     FirebaseUser user;
 
 
@@ -73,11 +85,14 @@ public class postNewItem extends AppCompatActivity  {
             public void onClick(View v) {
                 myDatabase = FirebaseDatabase.getInstance();
                 user = FirebaseAuth.getInstance().getCurrentUser();
+                myStorageReference = FirebaseStorage.getInstance().getReference("Item Info Pictures");
                 myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
+                uploadFile();
 
                 newItemInfo newItem = new newItemInfo(description.getText().toString(),
                         selectedCategory, selectedCondition,
-                        selectedDeliveryMethod, selectedQuantity);
+                        selectedDeliveryMethod, selectedQuantity, imageURL);
+
                 myDatabaseReference.push().setValue(newItem);
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
@@ -86,7 +101,6 @@ public class postNewItem extends AppCompatActivity  {
         });
 
         chooseImageButton = findViewById(R.id.chooseImageButton);
-        uploadImageButton = findViewById(R.id.uploadImageButton);
         submitImage = findViewById(R.id.itemImageView);
 
         chooseImageButton.setOnClickListener(new View.OnClickListener() {
@@ -96,12 +110,7 @@ public class postNewItem extends AppCompatActivity  {
             }
         });
 
-        uploadImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
     }
 
@@ -122,6 +131,38 @@ public class postNewItem extends AppCompatActivity  {
             submitImage.setImageURI(ImageUri);
         }
     }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    private void uploadFile() {
+        if(ImageUri != null) {
+            StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
+            + "." + getFileExtension(ImageUri));
+
+            imageReference.putFile(ImageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
+                            imageURL = taskSnapshot.getUploadSessionUri().toString();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(postNewItem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+        else {
+            Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT). show();
+        }
+    }
+
 
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);

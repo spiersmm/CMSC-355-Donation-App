@@ -10,17 +10,19 @@ public class newItemInfo {
     private String itemCondition;
     private String itemDeliveryMethod;
     private String itemQuantity;
+    private String itemImageUrl;
 
-    public newItemInfo() {}
+    public newItemInfo() { }
 
 
     public newItemInfo (String description, String category, String condition,
-                        String deliveryMethod, String quantity){
+                        String deliveryMethod, String quantity, String imageUrl){
         this.itemDescription = description;
         this.itemCategory = category;
         this.itemCondition = condition;
         this.itemDeliveryMethod = deliveryMethod;
         this.itemQuantity = quantity;
+        this.itemImageUrl = imageUrl;
     }
 
     public String getItemCategory() {
@@ -43,13 +45,32 @@ public class newItemInfo {
         return  itemQuantity;
     }
 
+    public String getItemImageUrl() {return itemImageUrl; }
+
+
+    public void setItemCategory(String category) { itemCategory = category; }
+
+    public void setItemCondition(String condition) { itemCondition = condition; }
+
+    public void setItemDeliveryMethod(String deliveryMethod) { itemDeliveryMethod = deliveryMethod; }
+
+    public void setItemDescription(String description) { itemDescription = description; }
+
+    public void setItemQuantity(String quantity) { itemQuantity = quantity; }
+
+    public void setItemImageUrl(String imageUrl) {itemImageUrl = imageUrl; }
+
+
+
+
     @Override
     public String toString() {
         return "Description: " + itemDescription +
                 ", Category: " + itemCategory +
                 ", Condition: " + itemCondition +
                 ", Delivery Method: " + itemDeliveryMethod +
-                ", Quantity: " + itemQuantity;
+                ", Quantity: " + itemQuantity +
+                ", Image URL: " + itemImageUrl;
     }
 
 }
