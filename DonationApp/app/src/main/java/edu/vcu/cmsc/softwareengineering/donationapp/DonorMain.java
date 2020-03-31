@@ -70,7 +70,7 @@ public class DonorMain extends AppCompatActivity {
 							String condition = ds2.child("itemCondition").getValue(String.class);
 							String deliveryMethod = ds2.child("itemDeliveryMethod").getValue(String.class);
 							String quantity = ds2.child("itemQuantity").getValue(String.class);
-							String imageUrl = ds2.child("itemImageURL").getValue(String.class);
+							String imageUrl = ds2.child("itemImageUrl").getValue(String.class);
 							itemList.add("Description: " + description +
 									", Category: " + category +
 									", Condition: " + condition +

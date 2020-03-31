@@ -12,7 +12,7 @@ public class newItemInfo {
     private String itemQuantity;
     private String itemImageUrl;
 
-    public newItemInfo() {}
+    public newItemInfo() { }
 
 
     public newItemInfo (String description, String category, String condition,

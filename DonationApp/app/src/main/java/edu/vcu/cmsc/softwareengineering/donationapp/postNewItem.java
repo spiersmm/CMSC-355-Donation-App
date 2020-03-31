@@ -46,6 +46,7 @@ public class postNewItem extends AppCompatActivity  {
     private String selectedDeliveryMethod;
     private String selectedCondition;
     private String selectedQuantity;
+    private String imageURL;
 
 
 
@@ -56,7 +57,7 @@ public class postNewItem extends AppCompatActivity  {
 
     private Uri ImageUri;
 
-    String imageURL;
+
 
 
     FirebaseDatabase myDatabase;
@@ -86,11 +87,12 @@ public class postNewItem extends AppCompatActivity  {
                 user = FirebaseAuth.getInstance().getCurrentUser();
                 myStorageReference = FirebaseStorage.getInstance().getReference("Item Info Pictures");
                 myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
-                String imageURL = returnImageURLString();
+                uploadFile();
 
                 newItemInfo newItem = new newItemInfo(description.getText().toString(),
                         selectedCategory, selectedCondition,
                         selectedDeliveryMethod, selectedQuantity, imageURL);
+
                 myDatabaseReference.push().setValue(newItem);
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
@@ -146,8 +148,7 @@ public class postNewItem extends AppCompatActivity  {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
-                            String imageURL = taskSnapshot.getUploadSessionUri().toString();
-                            returnImageURLString();
+                            imageURL = taskSnapshot.getUploadSessionUri().toString();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -162,9 +163,6 @@ public class postNewItem extends AppCompatActivity  {
         }
     }
 
-    public String returnImageURLString() {
-        return imageURL;
-    }
 
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
