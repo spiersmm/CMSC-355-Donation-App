@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +43,7 @@ public class postNewItem extends AppCompatActivity  {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     // variables for storing item data
-    String EnteredDescription;
+    private String EnteredDescription;
     private String selectedCategory;
     private String selectedDeliveryMethod;
     private String selectedCondition;
@@ -79,6 +81,7 @@ public class postNewItem extends AppCompatActivity  {
         createQuantitySpinner();
 
         final EditText description = (EditText) findViewById(R.id.editTextDescription);
+
         post = findViewById(R.id.PostNewItem);
 
         post.setOnClickListener(new View.OnClickListener() {
@@ -87,13 +90,10 @@ public class postNewItem extends AppCompatActivity  {
                 user = FirebaseAuth.getInstance().getCurrentUser();
                 myStorageReference = FirebaseStorage.getInstance().getReference("Item Info Pictures");
                 myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
-                uploadFile();
+                EnteredDescription = description.getText().toString();
+                uploadFile(EnteredDescription);
 
-                newItemInfo newItem = new newItemInfo(description.getText().toString(),
-                        selectedCategory, selectedCondition,
-                        selectedDeliveryMethod, selectedQuantity, imageURL);
 
-                myDatabaseReference.push().setValue(newItem);
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
                 startActivity(goBackToDonorMain);
             }
@@ -138,9 +138,9 @@ public class postNewItem extends AppCompatActivity  {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadFile() {
+    private void uploadFile(final String EnteredDescription) {
         if(ImageUri != null) {
-            StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
+            final StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
             + "." + getFileExtension(ImageUri));
 
             imageReference.putFile(ImageUri)
@@ -149,18 +149,20 @@ public class postNewItem extends AppCompatActivity  {
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
                             imageURL = taskSnapshot.getUploadSessionUri().toString();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(postNewItem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                                    selectedCategory, selectedCondition,
+                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+
+                            myDatabaseReference.push().setValue(newItem);
                         }
                     });
+
+
         }
         else {
             Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT). show();
         }
+
     }
 
 
