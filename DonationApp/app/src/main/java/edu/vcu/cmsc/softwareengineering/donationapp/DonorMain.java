@@ -4,6 +4,8 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -12,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,12 +27,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class DonorMain extends AppCompatActivity {
+public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
 
+	private RecyclerView mRecylcerView;
+	private ImageAdapter mAdapter;
+
+	private ProgressBar mProgressCircle;
+
+	private DatabaseReference myDatabaseReference;
+	private List<newItemInfo> mUploads;
 
 	ListView listView;
-	DatabaseReference myDatabaseReference;
 	newItemInfo info;
 	FirebaseUser user;
 
@@ -41,7 +52,6 @@ public class DonorMain extends AppCompatActivity {
 
 		Button postItemButton = findViewById(R.id.postItem);
 
-
 		postItemButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
@@ -51,13 +61,63 @@ public class DonorMain extends AppCompatActivity {
 		});
 
 
+		mRecylcerView = findViewById(R.id.recycler_view);
+		mRecylcerView.setHasFixedSize(true);
+		mRecylcerView.setLayoutManager(new LinearLayoutManager(this));
 
+		mProgressCircle = findViewById(R.id.progress_circle);
+
+		mUploads = new ArrayList<>();
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
-		DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-		DatabaseReference newItemInfoRef = rootRef.child("Item Info");
+		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
 
-		//Keeping all the comment below here, but commented out, in case I need to come back to it
+		myDatabaseReference.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+				for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+					if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
+						for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren()) {
+							newItemInfo newItem = postSnapshot.getValue(newItemInfo.class);
+							mUploads.add(newItem);
+						}
+					}
+
+				}
+				mAdapter = new ImageAdapter(DonorMain.this, mUploads);
+				mRecylcerView.setAdapter(mAdapter);
+				mAdapter.setOnItemClickListener(DonorMain.this);
+				mProgressCircle.setVisibility(View.INVISIBLE);
+			}
+
+			@Override
+			public void onCancelled(@NonNull DatabaseError databaseError) {
+				Toast.makeText(DonorMain.this, databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+				mProgressCircle.setVisibility(View.INVISIBLE);
+			}
+		});
+
+
+
+	}
+
+	@Override
+	public void onItemClick(int position) {
+		Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onEditClick(int position) {
+		Toast.makeText(this, "Edit click at position: " + position, Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onDeleteClick(int position) {
+		Toast.makeText(this, "Delete click at position: " + position, Toast.LENGTH_SHORT).show();
+	}
+}
+
+//Keeping all the comment below here, but commented out, in case I need to come back to it
 		/* ValueEventListener eventListener = new ValueEventListener() {
 
 			@Override
@@ -96,16 +156,3 @@ public class DonorMain extends AppCompatActivity {
 		newItemInfoRef.addListenerForSingleValueEvent(eventListener);
 
 		 */
-
-
-
-
-
-
-
-
-
-
-	}
-}
-

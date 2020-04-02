@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 
 // Activity for having a donor post a new item for donation
@@ -129,7 +130,9 @@ public class postNewItem extends AppCompatActivity  {
                 && data != null && data.getData() != null) {
             ImageUri = data.getData();
 
-            submitImage.setImageURI(ImageUri);
+            Picasso.with(this).load(ImageUri).into(submitImage);
+
+            //submitImage.setImageURI(ImageUri);
         }
     }
 
@@ -151,12 +154,25 @@ public class postNewItem extends AppCompatActivity  {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
-                            imageURL = taskSnapshot.getUploadSessionUri().toString();
+                            /* imageURL = taskSnapshot.getUploadSessionUri().toString();
+                            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                                    selectedCategory, selectedCondition,
+                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+
+                            myDatabaseReference.push().setValue(newItem); */
+
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!urlTask.isSuccessful());
+                            Uri downloadUrl = urlTask.getResult();
+
+                            imageURL = downloadUrl.toString();
                             newItemInfo newItem = new newItemInfo(EnteredDescription,
                                     selectedCategory, selectedCondition,
                                     selectedDeliveryMethod, selectedQuantity, imageURL);
 
                             myDatabaseReference.push().setValue(newItem);
+
+
                         }
                     });
 
