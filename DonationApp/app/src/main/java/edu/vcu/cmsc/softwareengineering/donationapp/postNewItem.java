@@ -91,7 +91,7 @@ public class postNewItem extends AppCompatActivity  {
                 myStorageReference = FirebaseStorage.getInstance().getReference("Item Info Pictures");
                 myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
                 EnteredDescription = description.getText().toString();
-                uploadFile(EnteredDescription);
+                uploadFile(EnteredDescription); // Item pushed to database in uploadFile method
 
 
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);

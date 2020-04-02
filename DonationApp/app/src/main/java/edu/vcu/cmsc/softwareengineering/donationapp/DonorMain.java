@@ -56,11 +56,13 @@ public class DonorMain extends AppCompatActivity {
 		user = FirebaseAuth.getInstance().getCurrentUser();
 		DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 		DatabaseReference newItemInfoRef = rootRef.child("Item Info");
-		ValueEventListener eventListener = new ValueEventListener() {
+
+		//Keeping all the comment below here, but commented out, in case I need to come back to it
+		/* ValueEventListener eventListener = new ValueEventListener() {
 
 			@Override
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-				List<String> itemList = new ArrayList<>();
+				 List<String> itemList = new ArrayList<>();
 				for (DataSnapshot ds : dataSnapshot.getChildren()) {
 					// only display data from user that is currently logged in
 					if(ds.getKey().equals(user.getUid())) {
@@ -92,6 +94,9 @@ public class DonorMain extends AppCompatActivity {
 
 		};
 		newItemInfoRef.addListenerForSingleValueEvent(eventListener);
+
+		 */
+
 
 
 
