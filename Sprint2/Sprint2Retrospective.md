@@ -1,1 +1,19 @@
 Project B Team 1 Sprint 2 Retrospective
+- **Description of User Stories and Test Cases we completed this sprint**
+  - Completed User Stories
+    - Donor Signup: As a donor, I want to be able to create a valid account so that I can log in and donate items
+    - Donor Login: As a donor, I want to be able to log in to my account so that I can donate items
+    - Recipient Signup: As an organization, I want to be able to create a valid account so that I can log in and receive items
+    - Recipient Login: As a recipient, I want to be able to log in to my account so that I can receive items.
+    - Post New Item: As a donator, I want to be able to post an item to donator so that organizations can see them
+      - We finished this user story from last sprint so that new item postings are connected to a donor account, and items can be posted with an image
+  - Test Cases (espresso tests)
+    - Donor Signup with all good input
+    - Donor Signup under 18 years old
+    - Donor Login with valid account
+    - Donor Login not valid account
+    - Donor Login forgot password
+    - Recipient Signup with all good input
+    - Recipient Signup without a .org email address
+    - Recipient Login with valid account
+    - Recipient Login not valid account
