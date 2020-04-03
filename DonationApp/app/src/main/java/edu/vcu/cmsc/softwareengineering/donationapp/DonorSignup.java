@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
-
+import java.util.regex.Pattern;
 
 
 public class DonorSignup extends AppCompatActivity {
@@ -111,6 +111,12 @@ public class DonorSignup extends AppCompatActivity {
                 }
 
                 if(dob.length() != 10) {
+                    Toast.makeText(getApplicationContext(), "Please enter your date of birth dd/mm/yyyy", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                // make sure date is correct format
+                Pattern p = Pattern.compile("\\d{2}/\\d{2}/\\d{4}");
+                if(!p.matcher(dob).matches()) {
                     Toast.makeText(getApplicationContext(), "Please enter your date of birth dd/mm/yyyy", Toast.LENGTH_LONG).show();
                     return;
                 }
