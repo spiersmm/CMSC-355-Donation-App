@@ -20,4 +20,10 @@ Project B Team 1 Sprint 2 Retrospective
     - Recipient Signup with existing user
     - Recipient Login with valid account
     - Recipient Login not organization
+- **Team Reflection**
+  - Chloe worked on creating the activities for donor signup and login, recipient signup and login, making an authentication Firebase database to store user signup credentials, creating a forgot password option for donor and recipient login, and fixing the donor main activity so it only shows the items that the current user has posted
+  - This sprint went a little better than the first one because we were more familier with Android Studio and github, which allowed us to finish more user stories and fix some of the functionality we worked on during the last sprint
+  - As a a team we had more communication and were better at assigning specific tasks that we all wanted to work on this sprint
+  - The transition to online classes and the current pandemic has made it harder for some of us to work on this project 
+  - Next sprint we will continue to communicate and assign specific tasks at the beginning of the sprint and we will try to accomplish more user stories on the recipient side of the app
  
