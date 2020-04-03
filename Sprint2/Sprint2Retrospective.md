@@ -10,10 +10,14 @@ Project B Team 1 Sprint 2 Retrospective
   - Test Cases (espresso tests)
     - Donor Signup with all good input
     - Donor Signup under 18 years old
+    - Donor Signup with existing user
     - Donor Login with valid account
-    - Donor Login not valid account
-    - Donor Login forgot password
+    - Donor Login with wrong password
+    - Donor Login forgot password with valid account
+    - Donor Login forgot password without valid account
     - Recipient Signup with all good input
     - Recipient Signup without a .org email address
+    - Recipient Signup with existing user
     - Recipient Login with valid account
-    - Recipient Login not valid account
+    - Recipient Login not organization
+ 
