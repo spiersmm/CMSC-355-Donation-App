@@ -22,10 +22,11 @@ Project B Team 1 Sprint 2 Retrospective
     - Recipient Signup with existing user
     - Recipient Login with valid account
     - Recipient Login not organization
+    - Post new item with an image
   - Test Cases (Junit)
     - Test newItemInfo class constructor, getter, and setter methods
 - **Team Reflection**
-  - Chloe worked on creating the activities for donor signup and login, recipient signup and login, making an authentication Firebase database to store user signup credentials, creating a forgot password option for donor and recipient login, and fixing the donor main activity so it only shows the items that the current user has posted
+  - Chloe worked on creating the activities for donor signup and login, recipient signup and login, making an authentication Firebase database to store user signup credentials, creating a forgot password option for donor and recipient login, fixing the donor main activity so it only shows the items that the current user has posted, and creating espresso and unit tests
   - Matthew Scott worked on the main activity for the recipient, created layout and first iteration of list item filter system.
   - Megan worked on being able to select and upload images to the firebase database/storagebase. New recyclerView's and cardView's were created to be able to display data back out of the databases. Created activity for the imageAdapter and created several methods within other existing activities to give function to the upload image tasks.
   - This sprint went a little better than the first one because we were more familier with Android Studio and github, which allowed us to finish more user stories and fix some of the functionality we worked on during the last sprint
