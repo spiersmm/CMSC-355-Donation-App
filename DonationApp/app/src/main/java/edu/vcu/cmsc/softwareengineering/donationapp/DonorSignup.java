@@ -89,22 +89,6 @@ public class DonorSignup extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter your name", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(phone)) {
-                    Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if(!Patterns.PHONE.matcher(phone).matches()) {
-                    Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
-                    return;
-                }
                 if(TextUtils.isEmpty(dob)) {
                     Toast.makeText(getApplicationContext(), "Please enter your date of birth dd/mm/yyyy", Toast.LENGTH_LONG).show();
                     return;
@@ -121,28 +105,44 @@ public class DonorSignup extends AppCompatActivity {
                     return;
                 }
                 // make sure user is at least 18
-                   String[] dobParts = dob.split("/");
-                   String month = dobParts[0];
-                   String day = dobParts[1];
-                   String year = dobParts[2];
-                   Calendar cal = Calendar.getInstance();
-                   int thisYear = cal.get(Calendar.YEAR);
-                   int thisMonth = cal.get(Calendar.MONTH);
-                   thisMonth++;
-                   int thisDay = cal.get(Calendar.DAY_OF_MONTH);
+                String[] dobParts = dob.split("/");
+                String month = dobParts[0];
+                String day = dobParts[1];
+                String year = dobParts[2];
+                Calendar cal = Calendar.getInstance();
+                int thisYear = cal.get(Calendar.YEAR);
+                int thisMonth = cal.get(Calendar.MONTH);
+                thisMonth++;
+                int thisDay = cal.get(Calendar.DAY_OF_MONTH);
 
-                   if(thisYear - Integer.parseInt(year) < 18) {
-                        Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
-                        return;
-                   }
-                   if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) < 0) {
-                        Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
-                        return;
-                   }
-                   if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) == 0 && thisDay - Integer.parseInt(day) < 0) {
-                       Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
-                       return;
-                   }
+                if(thisYear - Integer.parseInt(year) < 18) {
+                    Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) < 0) {
+                    Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(thisYear - Integer.parseInt(year) == 18 && thisMonth - Integer.parseInt(month) == 0 && thisDay - Integer.parseInt(day) < 0) {
+                    Toast.makeText(getApplicationContext(), "Must be 18 years old to make an account", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(phone)) {
+                    Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!Patterns.PHONE.matcher(phone).matches()) {
+                    Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 if(TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Please enter a valid password", Toast.LENGTH_LONG).show();
                     return;
