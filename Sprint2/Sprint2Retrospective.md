@@ -11,15 +11,19 @@ Project B Team 1 Sprint 2 Retrospective
     - Donor Signup with all good input
     - Donor Signup under 18 years old
     - Donor Signup with existing user
+    - Donor Signup missing input
     - Donor Login with valid account
     - Donor Login with wrong password
     - Donor Login forgot password with valid account
     - Donor Login forgot password without valid account
     - Recipient Signup with all good input
     - Recipient Signup without a .org email address
+    - Recipient Signup missing input
     - Recipient Signup with existing user
     - Recipient Login with valid account
     - Recipient Login not organization
+  - Test Cases (Junit)
+    - Test newItemInfo class constructor, getter, and setter methods
 - **Team Reflection**
   - Chloe worked on creating the activities for donor signup and login, recipient signup and login, making an authentication Firebase database to store user signup credentials, creating a forgot password option for donor and recipient login, and fixing the donor main activity so it only shows the items that the current user has posted
   - Matthew Scott worked on the main activity for the recipient, created layout and first iteration of list item filter system.
