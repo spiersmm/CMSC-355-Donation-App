@@ -5,13 +5,13 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 
 
 public class newItemInfo {
-    public String itemDescription;
-    public String itemCategory;
-    public String itemCondition;
-    public String itemDeliveryMethod;
-    public String itemQuantity;
-    public String itemImageUrl;
-    public String mKey;
+    private String itemDescription;
+    private String itemCategory;
+    private String itemCondition;
+    private String itemDeliveryMethod;
+    private String itemQuantity;
+    private String itemImageUrl;
+    private String mKey;
 
     public newItemInfo() { }
 
