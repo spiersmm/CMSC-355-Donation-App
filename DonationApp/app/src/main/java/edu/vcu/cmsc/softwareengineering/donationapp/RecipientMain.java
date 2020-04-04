@@ -2,6 +2,7 @@
 // CMSC 355 Spring 2020
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +12,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +31,9 @@ import java.util.List;
 public class RecipientMain extends AppCompatActivity {
 
 	private String SelectedItemRecord;
+	ListView ListView;
+	DatabaseReference myDataBaseReference;
+	FirebaseUser user;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +42,52 @@ public class RecipientMain extends AppCompatActivity {
 
 
 	createItemRecordSpinner();
+
+	/*
+	Recipients item listing 'rmListView'
+	 */
+		user = FirebaseAuth.getInstance().getCurrentUser();
+		DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+		DatabaseReference newItemInfoRef = rootRef.child("Item Info");
+
+		ValueEventListener eventListener = new ValueEventListener() {
+			@Override
+			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+				List<String> itemList = new ArrayList<>();
+					for (DataSnapshot ds : dataSnapshot.getChildren()) {
+						// only display data from user that is currently logged in
+						if(ds.getKey().equals(user.getUid())) {
+							for (DataSnapshot ds2 : ds.getChildren()) {
+								String description = ds2.child("itemDescription").getValue(String.class);
+								String category = ds2.child("itemCategory").getValue(String.class);
+								String condition = ds2.child("itemCondition").getValue(String.class);
+								String deliveryMethod = ds2.child("itemDeliveryMethod").getValue(String.class);
+								String quantity = ds2.child("itemQuantity").getValue(String.class);
+								String imageUrl = ds2.child("itemImageUrl").getValue(String.class);
+								itemList.add("Description: " + description +
+										", Category: " + category +
+										", Condition: " + condition +
+										", Delivery Method: " + deliveryMethod +
+										", Quantity: " + quantity +
+										", Image URL: " + imageUrl);
+
+							}
+						}
+					}
+				ListView listView = findViewById(R.id.rmListView);
+				ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(RecipientMain.this,android.R.layout.simple_list_item_1,itemList);
+				listView.setAdapter(arrayAdapter);
+			}
+
+			@Override
+			public void onCancelled(@NonNull DatabaseError databaseError) { }
+
+
+		};
+
+		newItemInfoRef.addListenerForSingleValueEvent(eventListener);
+
+
 
 	} // end onCreate()
 
@@ -82,7 +141,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes ( seems to be required )
+		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -146,7 +205,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 		final String[] options = { "Perfect", "Ok", "Poor" };    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes ( seems to be required )
+		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -210,7 +269,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 		final String[] options = { "Within 5 days", "Within 10 days", "Within 30 days" };    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes ( seems to be required )
+		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -277,7 +336,7 @@ public class RecipientMain extends AppCompatActivity {
 
 
 		final String[] options = { "Pickup", "Delivery" };    // options for the popup
-		final boolean[] checked = new boolean[] { false, false };   // default state of checkboxes ( seems to be required )
+		final boolean[] checked = new boolean[] { false, false };   // default state of checkboxes
 		final List<String> list = Arrays.asList(options);
 
         /*
@@ -333,6 +392,17 @@ public class RecipientMain extends AppCompatActivity {
 	public void refresh(View view) {
 		Toast.makeText(RecipientMain.this,"Refresh List", Toast.LENGTH_SHORT).show();
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
