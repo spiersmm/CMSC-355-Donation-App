@@ -24,6 +24,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +36,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.firebase.storage.FileDownloadTask;
+import com.squareup.picasso.Picasso;
 
 
 // Activity for having a donor post a new item for donation
@@ -92,7 +96,7 @@ public class postNewItem extends AppCompatActivity  {
                 myStorageReference = FirebaseStorage.getInstance().getReference("Item Info Pictures");
                 myDatabaseReference = myDatabase.getReference("Item Info").child(user.getUid());
                 EnteredDescription = description.getText().toString();
-                uploadFile(EnteredDescription);
+                uploadFile(EnteredDescription); // Item pushed to database in uploadFile method
 
 
                 Intent goBackToDonorMain = new Intent(getApplicationContext(), DonorMain.class);
@@ -129,6 +133,8 @@ public class postNewItem extends AppCompatActivity  {
                 && data != null && data.getData() != null) {
             ImageUri = data.getData();
 
+            //Picasso.with(this).load(ImageUri).into(submitImage);
+
             submitImage.setImageURI(ImageUri);
         }
     }
@@ -146,20 +152,56 @@ public class postNewItem extends AppCompatActivity  {
             final StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
             + "." + getFileExtension(ImageUri));
 
-            imageReference.putFile(ImageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            imageReference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    imageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            imageURL = uri.toString();
+                            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                                    selectedCategory, selectedCondition,
+                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+                            myDatabaseReference.push().setValue(newItem);
+                        }
+                    });
+                }
+            });
+
+
+
+
+
+
+
+
+
+                    /*.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
-                            imageURL = taskSnapshot.getUploadSessionUri().toString();
+                            /* imageURL = taskSnapshot.getUploadSessionUri().toString();
                             newItemInfo newItem = new newItemInfo(EnteredDescription,
                                     selectedCategory, selectedCondition,
                                     selectedDeliveryMethod, selectedQuantity, imageURL);
 
                             myDatabaseReference.push().setValue(newItem);
+
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!urlTask.isSuccessful());
+                            Uri downloadUrl = urlTask.getResult();
+
+                            imageURL = downloadUrl.toString();
+                            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                                    selectedCategory, selectedCondition,
+                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+
+                            myDatabaseReference.push().setValue(newItem);
+
+
                         }
                     });
-
+                        */
 
         }
         else {
