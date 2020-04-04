@@ -1,6 +1,7 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,12 +42,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         newItemInfo itemCurrent = mUploads.get(position);
         holder.textViewName.setText(itemCurrent.getItemDescription());
-        Picasso.with(mContext)
+        Picasso.get()
                 .load(itemCurrent.getItemImageUrl())
                 .placeholder(R.mipmap.ic_launcher)
-                .fit()
+                .resize(200,200)
                 .centerCrop()
                 .into(holder.imageView);
+
 
 
     }

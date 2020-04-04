@@ -24,6 +24,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.firebase.storage.FileDownloadTask;
 import com.squareup.picasso.Picasso;
 
 
@@ -130,9 +133,9 @@ public class postNewItem extends AppCompatActivity  {
                 && data != null && data.getData() != null) {
             ImageUri = data.getData();
 
-            Picasso.with(this).load(ImageUri).into(submitImage);
+            //Picasso.with(this).load(ImageUri).into(submitImage);
 
-            //submitImage.setImageURI(ImageUri);
+            submitImage.setImageURI(ImageUri);
         }
     }
 
@@ -149,8 +152,31 @@ public class postNewItem extends AppCompatActivity  {
             final StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
             + "." + getFileExtension(ImageUri));
 
-            imageReference.putFile(ImageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            imageReference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    imageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            imageURL = uri.toString();
+                            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                                    selectedCategory, selectedCondition,
+                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+                            myDatabaseReference.push().setValue(newItem);
+                        }
+                    });
+                }
+            });
+
+
+
+
+
+
+
+
+
+                    /*.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(postNewItem.this, "Upload successful", Toast.LENGTH_SHORT).show();
@@ -159,7 +185,7 @@ public class postNewItem extends AppCompatActivity  {
                                     selectedCategory, selectedCondition,
                                     selectedDeliveryMethod, selectedQuantity, imageURL);
 
-                            myDatabaseReference.push().setValue(newItem); */
+                            myDatabaseReference.push().setValue(newItem);
 
                             Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
                             while (!urlTask.isSuccessful());
@@ -175,7 +201,7 @@ public class postNewItem extends AppCompatActivity  {
 
                         }
                     });
-
+                        */
 
         }
         else {
