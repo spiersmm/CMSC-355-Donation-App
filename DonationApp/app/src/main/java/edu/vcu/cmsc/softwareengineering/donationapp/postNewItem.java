@@ -162,6 +162,7 @@ public class postNewItem extends AppCompatActivity  {
                             newItemInfo newItem = new newItemInfo(EnteredDescription,
                                     selectedCategory, selectedCondition,
                                     selectedDeliveryMethod, selectedQuantity, imageURL);
+
                             myDatabaseReference.push().setValue(newItem);
                         }
                     });

@@ -39,7 +39,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 
 
 	private DatabaseReference myDatabaseReference;
-	private List<newItemInfo> mUploads;
+	public List<newItemInfo> mUploads;
 
 	ListView listView;
 	newItemInfo info;
@@ -71,36 +71,22 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 
 		mUploads = new ArrayList<>();
 
-
-
 		user = FirebaseAuth.getInstance().getCurrentUser();
-
-
 
 		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
 
 		myDatabaseReference.addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
-
 				for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-					if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
-						for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren()) {
+					//if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
+					  if(postSnapshot.getKey().equals(user.getUid())) {
+						for (DataSnapshot postSnapshot2 : postSnapshot.getChildren()) {
 							newItemInfo newItem = postSnapshot2.getValue(newItemInfo.class);
-
-
-
 							mUploads.add(newItem);
 						}
 					}
-
 				}
-
-
-
-
 				mAdapter = new ImageAdapter(DonorMain.this, mUploads);
 				mRecylcerView.setAdapter(mAdapter);
 				mAdapter.setOnItemClickListener(DonorMain.this);
@@ -113,8 +99,6 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 				mProgressCircle.setVisibility(View.INVISIBLE);
 			}
 		});
-
-
 
 	}
 

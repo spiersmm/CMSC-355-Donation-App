@@ -3,16 +3,15 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 
-import com.google.firebase.database.Exclude;
 
 public class newItemInfo {
-    private String itemDescription;
-    private String itemCategory;
-    private String itemCondition;
-    private String itemDeliveryMethod;
-    private String itemQuantity;
-    private String itemImageUrl;
-    private String mKey;
+    public String itemDescription;
+    public String itemCategory;
+    public String itemCondition;
+    public String itemDeliveryMethod;
+    public String itemQuantity;
+    public String itemImageUrl;
+    public String mKey;
 
     public newItemInfo() { }
 
@@ -49,24 +48,24 @@ public class newItemInfo {
 
     public String getItemImageUrl() {return itemImageUrl; }
 
-    @Exclude
-    public String getKey() {return mKey; }
+    //@Exclude
+    //public String getKey() {return mKey; }
 
 
-    public void setItemCategory(String category) { itemCategory = category; }
+    public void setItemCategory(String category) { this.itemCategory = category; }
 
-    public void setItemCondition(String condition) { itemCondition = condition; }
+    public void setItemCondition(String condition) { this.itemCondition = condition; }
 
-    public void setItemDeliveryMethod(String deliveryMethod) { itemDeliveryMethod = deliveryMethod; }
+    public void setItemDeliveryMethod(String deliveryMethod) { this.itemDeliveryMethod = deliveryMethod; }
 
-    public void setItemDescription(String description) { itemDescription = description; }
+    public void setItemDescription(String description) { this.itemDescription = description; }
 
-    public void setItemQuantity(String quantity) { itemQuantity = quantity; }
+    public void setItemQuantity(String quantity) { this.itemQuantity = quantity; }
 
-    public void setItemImageUrl(String imageUrl) {itemImageUrl = imageUrl; }
+    public void setItemImageUrl(String imageUrl) {this.itemImageUrl = imageUrl; }
 
-    @Exclude
-    public void setKey(String key) {mKey = key; }
+    //@Exclude
+    //public void setKey(String key) {mKey = key; }
 
 
 
