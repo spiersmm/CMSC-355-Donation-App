@@ -31,6 +31,6 @@ Project B Team 1 Sprint 2 Retrospective
   - Megan worked on being able to select and upload images to the firebase database/storagebase. New recyclerView's and cardView's were created to be able to display data back out of the databases. Created activity for the imageAdapter and created several methods within other existing activities to give function to the upload image tasks.
   - This sprint went a little better than the first one because we were more familier with Android Studio and github, which allowed us to finish more user stories and fix some of the functionality we worked on during the last sprint
   - As a a team we had more communication and were better at assigning specific tasks that we all wanted to work on this sprint
-  - The transition to online classes and the current pandemic has made it harder for some of us to work on this project 
+  - The transition to online classes and the current pandemic has made it harder for some of us to work on this project and some of the functionalities of the app ended up being harder to implement than expected
   - Next sprint we will continue to communicate and assign specific tasks at the beginning of the sprint and we will try to accomplish more user stories on the recipient side of the app
  
