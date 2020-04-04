@@ -45,7 +45,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         Picasso.get()
                 .load(itemCurrent.getItemImageUrl())
                 .placeholder(R.mipmap.ic_launcher)
-                .resize(200,200)
+                .fit()
                 .centerCrop()
                 .into(holder.imageView);
 
