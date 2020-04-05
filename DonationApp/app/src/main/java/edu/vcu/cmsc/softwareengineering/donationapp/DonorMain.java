@@ -71,6 +71,10 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 
 		mUploads = new ArrayList<>();
 
+		mAdapter = new ImageAdapter(DonorMain.this, mUploads);
+		mRecylcerView.setAdapter(mAdapter);
+		mAdapter.setOnItemClickListener(DonorMain.this);
+
 		user = FirebaseAuth.getInstance().getCurrentUser();
 
 		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
@@ -78,6 +82,9 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		myDatabaseReference.addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+				mUploads.clear();
+
 				for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
 					//if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
 					  if(postSnapshot.getKey().equals(user.getUid())) {
@@ -87,9 +94,9 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 						}
 					}
 				}
-				mAdapter = new ImageAdapter(DonorMain.this, mUploads);
-				mRecylcerView.setAdapter(mAdapter);
-				mAdapter.setOnItemClickListener(DonorMain.this);
+
+				mAdapter.notifyDataSetChanged();
+
 				mProgressCircle.setVisibility(View.INVISIBLE);
 			}
 
