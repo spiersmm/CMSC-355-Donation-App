@@ -11,11 +11,22 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Tag;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -107,7 +118,28 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             return true;
                         case 2:
                             mListener.onDeleteClick(position);
-                            return true;
+                            newItemInfo itemCurrent = mUploads.get(position);
+                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
+
+                            itemQueury.addListenerForSingleValueEvent(new ValueEventListener() {
+                                private static final String TAG = "item";
+
+                                @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                                    ds.getRef().removeValue();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.e(TAG, "onCancelled", databaseError.toException());
+                            }
+                            });
+
+
+
                     }
                 }
             }
