@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -27,6 +28,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.Tag;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -117,8 +120,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             mListener.onEditClick(position);
                             return true;
                         case 2:
+                            // remove item that was clicked
                             mListener.onDeleteClick(position);
                             newItemInfo itemCurrent = mUploads.get(position);
+                            FirebaseStorage mFirebaseStorage = FirebaseStorage.getInstance();
+                            StorageReference deleteImage = mFirebaseStorage.getReferenceFromUrl(itemCurrent.getItemImageUrl());
+                            deleteImage.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void a) {
+                                    Log.e("Picture","#deleted");
+                                }
+                            });
+
                             DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
