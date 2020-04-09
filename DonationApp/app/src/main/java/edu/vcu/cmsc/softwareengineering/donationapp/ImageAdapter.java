@@ -1,6 +1,7 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -118,7 +119,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     switch (item.getItemId()) {
                         case 1:
                             mListener.onEditClick(position);
-                            return true;
+                            Intent editItem = new Intent(mContext.getApplicationContext(), postNewItem.class);
+                            mContext.startActivity(editItem);
                         case 2:
                             // remove item that was clicked
                             mListener.onDeleteClick(position);
