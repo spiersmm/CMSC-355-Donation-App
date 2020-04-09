@@ -71,7 +71,7 @@ public class postNewItem extends AppCompatActivity {
     StorageReference myStorageReference;
     FirebaseUser user;
 
-    String editDescription, editCategory;
+    String editDescription, editCategory, editDelivery, editCondition, editQuantity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +80,9 @@ public class postNewItem extends AppCompatActivity {
         Intent intent = getIntent();
         editDescription = intent.getStringExtra("description");
         editCategory = intent.getStringExtra("category");
+        editDelivery = intent.getStringExtra("delivery");
+        editCondition = intent.getStringExtra("condition");
+        editQuantity = intent.getStringExtra("quantity");
 
         // create drop down menus for posting a new item
         createCategorySpinner();
@@ -218,7 +221,7 @@ public class postNewItem extends AppCompatActivity {
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
         List<String> categoryItems = new ArrayList<String>();
-        categoryItems.add("Condition");
+        categoryItems.add(editCategory);
         categoryItems.add("Clothes");
         categoryItems.add("Food");
         categoryItems.add("Furniture");
@@ -251,7 +254,7 @@ public class postNewItem extends AppCompatActivity {
         final Spinner delivery = (Spinner) findViewById(R.id.spinnerDelivery);
 
         List<String> deliveryItems = new ArrayList<String>();
-        deliveryItems.add("Delivery Method");
+        deliveryItems.add(editDelivery);
         deliveryItems.add("Pickup");
         deliveryItems.add("Delivery");
 
@@ -278,7 +281,7 @@ public class postNewItem extends AppCompatActivity {
         final Spinner condition = (Spinner) findViewById(R.id.spinnerCondition);
 
         List<String> Items = new ArrayList<String>();
-        Items.add("Condition");
+        Items.add(editCondition);
         Items.add("Perfect");
         Items.add("Ok");
         Items.add("Poor");
@@ -306,7 +309,7 @@ public class postNewItem extends AppCompatActivity {
         final Spinner quantity = (Spinner) findViewById(R.id.spinnerQuantity);
 
         List<String> Items = new ArrayList<String>();
-        Items.add("Quantity");
+        Items.add(editQuantity);
         Items.add("1");
         Items.add("2");
         Items.add("3");

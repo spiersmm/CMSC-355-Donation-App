@@ -58,6 +58,10 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 
 			public void onClick(View v) {
 				Intent postNewItem = new Intent(getApplicationContext(), postNewItem.class);
+				postNewItem.putExtra("category", "Category");
+				postNewItem.putExtra("delivery", "Delivery Method");
+				postNewItem.putExtra("condition", "Condition");
+				postNewItem.putExtra("quantity", "Quantity");
 				startActivity(postNewItem);
 			}
 		});
