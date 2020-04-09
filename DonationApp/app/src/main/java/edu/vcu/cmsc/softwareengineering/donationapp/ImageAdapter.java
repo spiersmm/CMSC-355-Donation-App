@@ -124,6 +124,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             newItemInfo itemCurrent = mUploads.get(position);
                             Intent editItem = new Intent(mContext.getApplicationContext(), postNewItem.class);
                             editItem.putExtra("description", itemCurrent.getItemDescription());
+                            editItem.putExtra("category", itemCurrent.getItemCategory());
                             mContext.startActivity(editItem);
                         case 2:
                             // remove item that was clicked

@@ -71,7 +71,7 @@ public class postNewItem extends AppCompatActivity {
     StorageReference myStorageReference;
     FirebaseUser user;
 
-    String editDescription;
+    String editDescription, editCategory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +79,7 @@ public class postNewItem extends AppCompatActivity {
 
         Intent intent = getIntent();
         editDescription = intent.getStringExtra("description");
-
+        editCategory = intent.getStringExtra("category");
 
         // create drop down menus for posting a new item
         createCategorySpinner();
@@ -217,9 +217,8 @@ public class postNewItem extends AppCompatActivity {
 
     public void createCategorySpinner() {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
-
         List<String> categoryItems = new ArrayList<String>();
-        categoryItems.add("Category");
+        categoryItems.add("Condition");
         categoryItems.add("Clothes");
         categoryItems.add("Food");
         categoryItems.add("Furniture");
