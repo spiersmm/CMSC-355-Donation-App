@@ -1,1 +1,13 @@
 Project B Team 1 Sprint 3 Backlog
+- Edit Post
+  - As a donor, I want to be able to edit my item posts, so that recipients can have accurate information about my items
+- Delete Post
+  - As a donator, I want to be able to delete a post, so recipients know this is item is no longer available
+- Browse Items
+  - As a recipient, I want to be able to see what items have been posted, so that I can find what items I need
+- Filter
+  - As a recipient, I want to be able to filter items, so that I can find items that fit my needs.
+- Donor Historic Record
+  - As a donor, I want to have a historic record, so I can view what items I have donated in the past.
+- Recipient Historic Record
+  - As a recipient, I want to view the receipt of past transactions, detailing the donor, item(s), and date of each, in my app so that I can easily access the information from specific transactions when verifying that the items in my organization's inventory are accounted for.
