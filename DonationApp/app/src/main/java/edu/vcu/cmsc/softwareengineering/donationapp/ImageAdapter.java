@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -112,6 +113,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
+            String description, category, condition, quantity, delivery;
             if (mListener != null) {
                 int position = getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION) {
@@ -119,12 +121,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     switch (item.getItemId()) {
                         case 1:
                             mListener.onEditClick(position);
+                            newItemInfo itemCurrent = mUploads.get(position);
                             Intent editItem = new Intent(mContext.getApplicationContext(), postNewItem.class);
+                            editItem.putExtra("description", itemCurrent.getItemDescription());
                             mContext.startActivity(editItem);
                         case 2:
                             // remove item that was clicked
                             mListener.onDeleteClick(position);
-                            newItemInfo itemCurrent = mUploads.get(position);
+                            itemCurrent = mUploads.get(position);
                             FirebaseStorage mFirebaseStorage = FirebaseStorage.getInstance();
                             StorageReference deleteImage = mFirebaseStorage.getReferenceFromUrl(itemCurrent.getItemImageUrl());
                             deleteImage.delete().addOnSuccessListener(new OnSuccessListener<Void>() {

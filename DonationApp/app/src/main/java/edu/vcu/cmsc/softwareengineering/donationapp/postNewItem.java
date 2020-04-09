@@ -41,7 +41,7 @@ import com.squareup.picasso.Picasso;
 
 
 // Activity for having a donor post a new item for donation
-public class postNewItem extends AppCompatActivity  {
+public class postNewItem extends AppCompatActivity {
 
 
     private static final int PICK_IMAGE_REQUEST = 1;
@@ -71,11 +71,14 @@ public class postNewItem extends AppCompatActivity  {
     StorageReference myStorageReference;
     FirebaseUser user;
 
-
+    String editDescription;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_new_item);
+
+        Intent intent = getIntent();
+        editDescription = intent.getStringExtra("description");
 
 
         // create drop down menus for posting a new item
@@ -85,7 +88,7 @@ public class postNewItem extends AppCompatActivity  {
         createQuantitySpinner();
 
         final EditText description = (EditText) findViewById(R.id.editTextDescription);
-
+        description.setText(editDescription);
         post = findViewById(R.id.PostNewItem);
 
 

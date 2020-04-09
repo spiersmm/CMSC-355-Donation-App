@@ -12,6 +12,7 @@
     <list default="true" id="bbb47d09-c89c-4545-9652-3e40a1c009f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
