@@ -5,6 +5,8 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,8 +34,16 @@ import java.util.List;
 public class RecipientMain extends AppCompatActivity {
 
 	private String SelectedItemRecord;
-	ListView ListView;
-	DatabaseReference myDataBaseReference;
+
+	private RecyclerView mRecylcerView;
+	private ImageAdapter mAdapter;
+
+
+	private DatabaseReference myDatabaseReference;
+	public List<newItemInfo> mUploads;
+
+	ListView listView;
+	newItemInfo info;
 	FirebaseUser user;
 	
 	@Override
@@ -44,48 +55,50 @@ public class RecipientMain extends AppCompatActivity {
 	createItemRecordSpinner();
 
 	/*
-	Recipients item listing 'rmListView'
+	Recipients item listing 'rmRecyclerView'
 	 */
-		user = FirebaseAuth.getInstance().getCurrentUser();
-		DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-		DatabaseReference newItemInfoRef = rootRef.child("Item Info");
 
-		ValueEventListener eventListener = new ValueEventListener() {
+		mRecylcerView = findViewById(R.id.recycler_view);
+		mRecylcerView.setHasFixedSize(true);
+		mRecylcerView.setLayoutManager(new LinearLayoutManager(this));
+
+		mUploads = new ArrayList<>();
+
+		mAdapter = new ImageAdapter(RecipientMain.this, mUploads);
+		mRecylcerView.setAdapter(mAdapter);
+//		mAdapter.setOnItemClickListener(RecipientMain.this);
+
+		user = FirebaseAuth.getInstance().getCurrentUser();
+
+		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
+
+		myDatabaseReference.addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-				List<String> itemList = new ArrayList<>();
-					for (DataSnapshot ds : dataSnapshot.getChildren()) {
-						// only display data from user that is currently logged in
-						if(ds.getKey().equals(user.getUid())) {
-							for (DataSnapshot ds2 : ds.getChildren()) {
-								String description = ds2.child("itemDescription").getValue(String.class);
-								String category = ds2.child("itemCategory").getValue(String.class);
-								String condition = ds2.child("itemCondition").getValue(String.class);
-								String deliveryMethod = ds2.child("itemDeliveryMethod").getValue(String.class);
-								String quantity = ds2.child("itemQuantity").getValue(String.class);
-								String imageUrl = ds2.child("itemImageUrl").getValue(String.class);
-								itemList.add("Description: " + description +
-										", Category: " + category +
-										", Condition: " + condition +
-										", Delivery Method: " + deliveryMethod +
-										", Quantity: " + quantity +
-										", Image URL: " + imageUrl);
 
-							}
+				mUploads.clear();
+
+				for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+					//if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
+					if(postSnapshot.getKey().equals(user.getUid())) {
+						for (DataSnapshot postSnapshot2 : postSnapshot.getChildren()) {
+							newItemInfo newItem = postSnapshot2.getValue(newItemInfo.class);
+							mUploads.add(newItem);
 						}
 					}
-				ListView listView = findViewById(R.id.rmListView);
-				ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(RecipientMain.this,android.R.layout.simple_list_item_1,itemList);
-				listView.setAdapter(arrayAdapter);
+				}
+
+				mAdapter.notifyDataSetChanged();
+
+//				mProgressCircle.setVisibility(View.INVISIBLE);
 			}
 
 			@Override
-			public void onCancelled(@NonNull DatabaseError databaseError) { }
-
-
-		};
-
-		newItemInfoRef.addListenerForSingleValueEvent(eventListener);
+			public void onCancelled(@NonNull DatabaseError databaseError) {
+				Toast.makeText(RecipientMain.this, databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+//				mProgressCircle.setVisibility(View.INVISIBLE);
+			}
+		});
 
 
 
