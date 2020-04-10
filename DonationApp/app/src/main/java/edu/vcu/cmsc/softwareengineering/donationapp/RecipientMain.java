@@ -45,6 +45,7 @@ public class RecipientMain extends AppCompatActivity {
 	ListView listView;
 	newItemInfo info;
 	FirebaseUser user;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class RecipientMain extends AppCompatActivity {
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
 
+
 		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
 
 		myDatabaseReference.addValueEventListener(new ValueEventListener() {
@@ -80,12 +82,12 @@ public class RecipientMain extends AppCompatActivity {
 
 				for (DataSnapshot postSnapshot : dataSnapshot.getChildren()){
 					//if(Objects.equals(postSnapshot.getKey(), user.getUid())) {
-					if(postSnapshot.getKey().equals(user.getUid())) {
+//					if(postSnapshot.getKey().equals(user.getUid())) {	// this if will filter for the specific logged in user
 						for (DataSnapshot postSnapshot2 : postSnapshot.getChildren()) {
 							newItemInfo newItem = postSnapshot2.getValue(newItemInfo.class);
 							mUploads.add(newItem);
 						}
-					}
+//					}
 				}
 
 				mAdapter.notifyDataSetChanged();
