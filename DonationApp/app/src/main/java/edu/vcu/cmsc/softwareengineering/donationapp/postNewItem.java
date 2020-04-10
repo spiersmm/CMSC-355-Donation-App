@@ -71,7 +71,7 @@ public class postNewItem extends AppCompatActivity {
     StorageReference myStorageReference;
     FirebaseUser user;
 
-    String editDescription, editCategory, editDelivery, editCondition, editQuantity;
+    String editDescription, editCategory, editDelivery, editCondition, editQuantity, editImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +83,8 @@ public class postNewItem extends AppCompatActivity {
         editDelivery = intent.getStringExtra("delivery");
         editCondition = intent.getStringExtra("condition");
         editQuantity = intent.getStringExtra("quantity");
+        editImage = intent.getStringExtra("image");
+
 
         // create drop down menus for posting a new item
         createCategorySpinner();
@@ -113,7 +115,7 @@ public class postNewItem extends AppCompatActivity {
 
         chooseImageButton = findViewById(R.id.chooseImageButton);
         submitImage = findViewById(R.id.itemImageView);
-
+        
         chooseImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

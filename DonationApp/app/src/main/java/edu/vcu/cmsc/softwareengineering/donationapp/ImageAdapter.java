@@ -128,6 +128,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             editItem.putExtra("delivery", itemCurrent.getItemDeliveryMethod());
                             editItem.putExtra("condition", itemCurrent.getItemCondition());
                             editItem.putExtra("quantity", itemCurrent.getItemQuantity());
+                            editItem.putExtra("image", itemCurrent.getItemImageUrl());
                             mContext.startActivity(editItem);
                         case 2:
                             // remove item that was clicked
