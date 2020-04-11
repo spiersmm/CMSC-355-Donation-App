@@ -74,6 +74,7 @@ public class postNewItem extends AppCompatActivity {
     String editDescription, editCategory, editDelivery, editCondition, editQuantity, editImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_new_item);
 
@@ -84,7 +85,6 @@ public class postNewItem extends AppCompatActivity {
         editCondition = intent.getStringExtra("condition");
         editQuantity = intent.getStringExtra("quantity");
         editImage = intent.getStringExtra("image");
-
 
         // create drop down menus for posting a new item
         createCategorySpinner();
@@ -115,6 +115,10 @@ public class postNewItem extends AppCompatActivity {
 
         chooseImageButton = findViewById(R.id.chooseImageButton);
         submitImage = findViewById(R.id.itemImageView);
+        if(!(editImage.equals("noImage"))) {
+            Picasso.get().load(editImage).into(submitImage);
+            imageURL = editImage;
+        }
         
         chooseImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,6 +216,13 @@ public class postNewItem extends AppCompatActivity {
                     });
                         */
 
+        }
+        else if(imageURL.equals(editImage)){
+            newItemInfo newItem = new newItemInfo(EnteredDescription,
+                    selectedCategory, selectedCondition,
+                    selectedDeliveryMethod, selectedQuantity, imageURL);
+
+            myDatabaseReference.push().setValue(newItem);
         }
         else {
             Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT). show();

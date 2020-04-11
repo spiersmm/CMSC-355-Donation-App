@@ -10,25 +10,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener {
 
@@ -62,6 +63,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 				postNewItem.putExtra("delivery", "Delivery Method");
 				postNewItem.putExtra("condition", "Condition");
 				postNewItem.putExtra("quantity", "Quantity");
+				postNewItem.putExtra("image", "noImage");
 				startActivity(postNewItem);
 			}
 		});
@@ -121,11 +123,73 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 	@Override
 	public void onEditClick(int position) {
 		Toast.makeText(this, "Edit click at position: " + position, Toast.LENGTH_SHORT).show();
+		newItemInfo itemCurrent = mUploads.get(position);
+		DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+		FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+		Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
+		// delete old item
+		itemQueury.addListenerForSingleValueEvent(new ValueEventListener() {
+			private static final String TAG = "item";
+
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot ds : dataSnapshot.getChildren()) {
+					ds.getRef().removeValue();
+				}
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+				Log.e(TAG, "onCancelled", databaseError.toException());
+			}
+		});
+		// go to postNewItem activity to edit item
+		// should be able to seem image and the original item details
+		Intent editItem = new Intent(getApplicationContext(), postNewItem.class);
+		editItem.putExtra("description", itemCurrent.getItemDescription());
+		editItem.putExtra("category", itemCurrent.getItemCategory());
+		editItem.putExtra("delivery", itemCurrent.getItemDeliveryMethod());
+		editItem.putExtra("condition", itemCurrent.getItemCondition());
+		editItem.putExtra("quantity", itemCurrent.getItemQuantity());
+		editItem.putExtra("image", itemCurrent.getItemImageUrl());
+		startActivity(editItem);
 	}
 
 	@Override
 	public void onDeleteClick(int position) {
 		Toast.makeText(this, "Delete click at position: " + position, Toast.LENGTH_SHORT).show();
+		newItemInfo itemCurrent = mUploads.get(position);
+		itemCurrent = mUploads.get(position);
+		FirebaseStorage mFirebaseStorage = FirebaseStorage.getInstance();
+		// delete image
+		  StorageReference deleteImage = mFirebaseStorage.getReferenceFromUrl(itemCurrent.getItemImageUrl());
+		  deleteImage.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+		      @Override
+		      public void onSuccess(Void a) {
+		          Log.e("Picture","#deleted");
+		      }
+		  });
+		// delete item
+		DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+		FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+		Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
+
+		itemQueury.addListenerForSingleValueEvent(new ValueEventListener() {
+			private static final String TAG = "item";
+
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot ds : dataSnapshot.getChildren()) {
+					ds.getRef().removeValue();
+				}
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+				Log.e(TAG, "onCancelled", databaseError.toException());
+			}
+		});
+
 	}
 }
 
