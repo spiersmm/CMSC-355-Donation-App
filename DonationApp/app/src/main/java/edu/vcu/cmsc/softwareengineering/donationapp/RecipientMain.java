@@ -68,7 +68,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 		mAdapter = new ImageAdapter(RecipientMain.this, mUploads);
 		mRecylcerView.setAdapter(mAdapter);
-//		mAdapter.setOnItemClickListener(RecipientMain.this);
+		mAdapter.setOnItemClickListener(RecipientMain.this);
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
 
