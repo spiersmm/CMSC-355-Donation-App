@@ -58,4 +58,9 @@
     <string name="description">Description</string>
     <string name="item_details">Item Details</string>
     <string name="todo">TODO</string>
+    <string name="description2">Description:</string>
+    <string name="category2">Category:</string>
+    <string name="delivery_method2">Delivery Method:</string>
+    <string name="quantity2">Quantity:</string>
+    <string name="condition2">Condition:</string>
 </resources>

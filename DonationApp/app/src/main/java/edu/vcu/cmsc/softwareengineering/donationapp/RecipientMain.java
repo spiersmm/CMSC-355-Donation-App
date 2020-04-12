@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RecipientMain extends AppCompatActivity {
+public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener{
 
 	private String SelectedItemRecord;
 
@@ -105,8 +106,29 @@ public class RecipientMain extends AppCompatActivity {
 
 
 	} // end onCreate()
+	@Override
+	public void onItemClick(int position) {
+		Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
+		newItemInfo itemCurrent = mUploads.get(position);
+		Intent seeItemDetails = new Intent(getApplicationContext(), MoreInfo.class);
+		seeItemDetails.putExtra("description", itemCurrent.getItemDescription());
+		seeItemDetails.putExtra("category", itemCurrent.getItemCategory());
+		seeItemDetails.putExtra("delivery", itemCurrent.getItemDeliveryMethod());
+		seeItemDetails.putExtra("condition", itemCurrent.getItemCondition());
+		seeItemDetails.putExtra("quantity", itemCurrent.getItemQuantity());
+		seeItemDetails.putExtra("image", itemCurrent.getItemImageUrl());
+		startActivity(seeItemDetails);
+	}
 
+	@Override
+	public void onEditClick(int position) {
+		Toast.makeText(this, "Recipients cannot edit posts " + position, Toast.LENGTH_SHORT).show();
+	}
 
+	@Override
+	public void onDeleteClick(int position) {
+		Toast.makeText(this, "Recipients cannot delete posts " + position, Toast.LENGTH_SHORT).show();
+	}
 
 	/**
 	 *  method to create spinner for item record
@@ -407,27 +429,6 @@ public class RecipientMain extends AppCompatActivity {
 	public void refresh(View view) {
 		Toast.makeText(RecipientMain.this,"Refresh List", Toast.LENGTH_SHORT).show();
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 } // end class
