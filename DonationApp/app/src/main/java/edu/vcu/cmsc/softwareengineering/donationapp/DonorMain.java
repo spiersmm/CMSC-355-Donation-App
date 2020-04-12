@@ -118,6 +118,15 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 	@Override
 	public void onItemClick(int position) {
 		Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
+		newItemInfo itemCurrent = mUploads.get(position);
+		Intent seeItemDetails = new Intent(getApplicationContext(), MoreInfo.class);
+		seeItemDetails.putExtra("description", itemCurrent.getItemDescription());
+		seeItemDetails.putExtra("category", itemCurrent.getItemCategory());
+		seeItemDetails.putExtra("delivery", itemCurrent.getItemDeliveryMethod());
+		seeItemDetails.putExtra("condition", itemCurrent.getItemCondition());
+		seeItemDetails.putExtra("quantity", itemCurrent.getItemQuantity());
+		seeItemDetails.putExtra("image", itemCurrent.getItemImageUrl());
+		startActivity(seeItemDetails);
 	}
 
 	@Override

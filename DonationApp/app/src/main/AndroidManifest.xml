@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.vcu.cmsc.softwareengineering.donationapp">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".RecipientLogin"></activity>
+        <activity android:name=".MoreInfo"></activity>
+        <activity android:name=".RecipientLogin" />
         <activity android:name=".DonorLogin" />
         <activity android:name=".RecipientSignUp" />
         <activity android:name=".DonorSignup" />
