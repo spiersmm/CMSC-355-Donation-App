@@ -38,6 +38,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 	private RecyclerView mRecylcerView;
 	private ImageAdapter mAdapter;
+	private ProgressBar progressCircle;
 
 
 	private DatabaseReference myDatabaseReference;
@@ -63,6 +64,8 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		mRecylcerView = findViewById(R.id.recycler_view);
 		mRecylcerView.setHasFixedSize(true);
 		mRecylcerView.setLayoutManager(new LinearLayoutManager(this));
+
+		progressCircle = findViewById(R.id.progressCircleR);
 
 		mUploads = new ArrayList<>();
 
@@ -93,13 +96,13 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 				mAdapter.notifyDataSetChanged();
 
-//				mProgressCircle.setVisibility(View.INVISIBLE);
+				progressCircle.setVisibility(View.INVISIBLE);
 			}
 
 			@Override
 			public void onCancelled(@NonNull DatabaseError databaseError) {
 				Toast.makeText(RecipientMain.this, databaseError.getMessage(),Toast.LENGTH_SHORT).show();
-//				mProgressCircle.setVisibility(View.INVISIBLE);
+				progressCircle.setVisibility(View.INVISIBLE);
 			}
 		});
 
@@ -139,7 +142,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 		List<String> itemRecordItems = new ArrayList<>();
 			itemRecordItems.add("Available");
-			itemRecordItems.add("Recieved");
+			itemRecordItems.add("Received");
 
 		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
 			itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -182,7 +185,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		final List<String> list = Arrays.asList(options);
 
         /*
-        Method for the actual multiple choice checkbox popup, containing onlick listener
+        Method for the actual multiple choice checkbox popup, containing onclick listener
         setMultiChoiceItems()
          */
 		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
@@ -223,7 +226,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			}
 		});
 
-		builder.show(); // methood to show the popup dialog
+		builder.show(); // method to show the popup dialog
 
 	}
 
@@ -246,7 +249,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		final List<String> list = Arrays.asList(options);
 
         /*
-        Method for the actual multiple choice checkbox popup, containing onlick listener
+        Method for the actual multiple choice checkbox popup, containing onclick listener
         setMultiChoiceItems()
          */
 		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
@@ -287,7 +290,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			}
 		});
 
-		builder.show(); // methood to show the popup dialog
+		builder.show(); // method to show the popup dialog
 
 	}
 
@@ -351,7 +354,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			}
 		});
 
-		builder.show(); // methood to show the popup dialog
+		builder.show(); // method to show the popup dialog
 
 	}
 
