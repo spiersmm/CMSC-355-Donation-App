@@ -133,7 +133,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 	public void onDeleteClick(int position) {
 		Toast.makeText(this, "Donor was notified " + position, Toast.LENGTH_SHORT).show();
 	}
-
+	// recipient mark item as recieved
 	@Override
 	public void onMarkClick(int position) {
 		Toast.makeText(this, "Item has been received " + position, Toast.LENGTH_SHORT).show();

@@ -98,11 +98,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String email = user.getEmail();
+            // change menu based on whether user is a donor or a recipient
             if(email.contains(".org")) {
                 menu.setHeaderTitle("Select Action");
                 MenuItem editClick = menu.add(Menu.NONE, 1, 1, "Favorite Item");
                 MenuItem deleteClick = menu.add(Menu.NONE, 2, 2, "Message Donor");
-                MenuItem markClick = menu.add(Menu.NONE, 3, 3, "Mark Item as Recieved");
+                MenuItem markClick = menu.add(Menu.NONE, 3, 3, "Mark Item as Received");
 
                 editClick.setOnMenuItemClickListener(this);
                 deleteClick.setOnMenuItemClickListener(this);

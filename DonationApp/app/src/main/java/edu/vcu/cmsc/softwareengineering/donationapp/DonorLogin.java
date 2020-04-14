@@ -82,6 +82,10 @@ public class DonorLogin extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter your email", Toast.LENGTH_LONG).show();
                     return;
                 }
+                if(email.contains(".org")) {
+                    Toast.makeText(getApplicationContext(), "Donors cannot use organization account", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Please enter your password", Toast.LENGTH_LONG).show();
                     return;

@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bbb47d09-c89c-4545-9652-3e40a1c009f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorSignup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" afterDir="false" />
     </list>

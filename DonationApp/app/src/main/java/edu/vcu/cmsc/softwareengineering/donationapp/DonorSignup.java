@@ -135,6 +135,10 @@ public class DonorSignup extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_LONG).show();
                     return;
                 }
+                if(email.contains(".org")) {
+                    Toast.makeText(getApplicationContext(), "Donors can not use organization email", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 if(TextUtils.isEmpty(phone)) {
                     Toast.makeText(getApplicationContext(), "Please enter your phone number", Toast.LENGTH_LONG).show();
                     return;

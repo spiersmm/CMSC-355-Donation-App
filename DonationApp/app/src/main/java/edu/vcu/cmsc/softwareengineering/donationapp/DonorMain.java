@@ -128,7 +128,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		seeItemDetails.putExtra("image", itemCurrent.getItemImageUrl());
 		startActivity(seeItemDetails);
 	}
-
+	// donor edit item
 	@Override
 	public void onEditClick(int position) {
 		Toast.makeText(this, "Edit click at position: " + position, Toast.LENGTH_SHORT).show();
@@ -163,7 +163,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		editItem.putExtra("image", itemCurrent.getItemImageUrl());
 		startActivity(editItem);
 	}
-
+	// donor delete item
 	@Override
 	public void onDeleteClick(int position) {
 		Toast.makeText(this, "Delete click at position: " + position, Toast.LENGTH_SHORT).show();
@@ -200,7 +200,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		});
 
 	}
-
+	// donor mark item as donated
 	@Override
 	public void onMarkClick(int position) {
 		Toast.makeText(this, "Item has been donated " + position, Toast.LENGTH_SHORT).show();
