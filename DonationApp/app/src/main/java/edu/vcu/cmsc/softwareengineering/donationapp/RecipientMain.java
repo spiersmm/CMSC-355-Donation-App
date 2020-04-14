@@ -122,15 +122,21 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		seeItemDetails.putExtra("image", itemCurrent.getItemImageUrl());
 		startActivity(seeItemDetails);
 	}
-
+	// recipient favorite item
 	@Override
 	public void onEditClick(int position) {
-		Toast.makeText(this, "Recipients cannot edit posts " + position, Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Favorite Item " + position, Toast.LENGTH_SHORT).show();
+	}
+
+	// recipient message donor
+	@Override
+	public void onDeleteClick(int position) {
+		Toast.makeText(this, "Donor was notified " + position, Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
-	public void onDeleteClick(int position) {
-		Toast.makeText(this, "Recipients cannot delete posts " + position, Toast.LENGTH_SHORT).show();
+	public void onMarkClick(int position) {
+		Toast.makeText(this, "Item has been received " + position, Toast.LENGTH_SHORT).show();
 	}
 
 	/**

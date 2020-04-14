@@ -1,5 +1,6 @@
 package edu.vcu.cmsc.softwareengineering.donationapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -95,12 +96,28 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Select Action");
-            MenuItem editClick = menu.add(Menu.NONE, 1, 1, "Edit Item");
-            MenuItem deleteClick = menu.add(Menu.NONE, 2, 2, "Delete Item");
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String email = user.getEmail();
+            if(email.contains(".org")) {
+                menu.setHeaderTitle("Select Action");
+                MenuItem editClick = menu.add(Menu.NONE, 1, 1, "Favorite Item");
+                MenuItem deleteClick = menu.add(Menu.NONE, 2, 2, "Message Donor");
+                MenuItem markClick = menu.add(Menu.NONE, 3, 3, "Mark Item as Recieved");
 
-            editClick.setOnMenuItemClickListener(this);
-            deleteClick.setOnMenuItemClickListener(this);
+                editClick.setOnMenuItemClickListener(this);
+                deleteClick.setOnMenuItemClickListener(this);
+                markClick.setOnMenuItemClickListener(this);
+            }
+            else {
+                menu.setHeaderTitle("Select Action");
+                MenuItem editClick = menu.add(Menu.NONE, 1, 1, "Edit Item");
+                MenuItem deleteClick = menu.add(Menu.NONE, 2, 2, "Delete Item");
+                MenuItem markClick = menu.add(Menu.NONE, 3, 3, "Mark Item as Donated");
+
+                editClick.setOnMenuItemClickListener(this);
+                deleteClick.setOnMenuItemClickListener(this);
+                markClick.setOnMenuItemClickListener(this);
+            }
         }
 
 
@@ -118,6 +135,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                        case 2:
                            mListener.onDeleteClick(position);
                            break;
+
+                        case 3:
+                            mListener.onMarkClick(position);
+                            break;
                     }
                 }
             }
@@ -131,6 +152,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         void onEditClick(int position);
 
         void onDeleteClick(int position);
+
+        void onMarkClick(int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener){

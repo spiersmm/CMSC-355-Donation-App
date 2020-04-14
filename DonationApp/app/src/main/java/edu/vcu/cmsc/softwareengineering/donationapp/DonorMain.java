@@ -200,6 +200,11 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		});
 
 	}
+
+	@Override
+	public void onMarkClick(int position) {
+		Toast.makeText(this, "Item has been donated " + position, Toast.LENGTH_SHORT).show();
+	}
 }
 
 //Keeping all the comment below here, but commented out, in case I need to come back to it
