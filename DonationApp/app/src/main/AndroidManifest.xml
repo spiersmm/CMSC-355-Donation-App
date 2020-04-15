@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MoreInfo"></activity>
+        <activity android:name=".MoreInfo" />
         <activity android:name=".RecipientLogin" />
         <activity android:name=".DonorLogin" />
         <activity android:name=".RecipientSignUp" />
@@ -25,19 +25,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".PostListActivity"
-            android:label="@string/title_post_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".PostDetailActivity"
-            android:label="@string/title_post_detail"
-            android:parentActivityName=".PostListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.vcu.cmsc.softwareengineering.donationapp.PostListActivity" />
         </activity>
         <activity android:name=".RecipientMain" />
         <activity android:name=".Register" />
