@@ -193,11 +193,11 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 
 
-	/*
+	/**
     Method for filter button and multiple choice popup dialog
-    consists of inner .setMultiChoiceItems() method for the checkbox list
-    .setPositivebutton() method for an 'ok' button
-    .setNeutralButton() method for a 'cancel' button
+    consists of inner methods: <li>.setMultiChoiceItems() method for the checkbox list</li>
+    <li>.setPositivebutton() method for an 'ok' button</li>
+    <li>.setNeutralButton() method for a 'cancel' button</li>
      */
 	public void filterCategory(View view) {
 
