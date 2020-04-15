@@ -32,6 +32,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *
+ */
 public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener{
 
 	private String SelectedItemRecord;
@@ -54,30 +57,20 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_recipient_main);
 
+		createItemRecordSpinner();
 
-	createItemRecordSpinner();
-
-	/*
-	Recipients item listing 'rmRecyclerView'
-	 */
-
+		/* Recipients item listing 'rmRecyclerView' */
 		mRecylcerView = findViewById(R.id.recycler_view);
 		mRecylcerView.setHasFixedSize(true);
 		mRecylcerView.setLayoutManager(new LinearLayoutManager(this));
-
 		progressCircle = findViewById(R.id.progressCircleR);
-
 		mUploads = new ArrayList<>();
-
 		mAdapter = new ImageAdapter(RecipientMain.this, mUploads);
 		mRecylcerView.setAdapter(mAdapter);
 		mAdapter.setOnItemClickListener(RecipientMain.this);
 
 		user = FirebaseAuth.getInstance().getCurrentUser();
-
-
 		myDatabaseReference = FirebaseDatabase.getInstance().getReference("Item Info");
-
 		myDatabaseReference.addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -109,6 +102,12 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 
 	} // end onCreate()
+
+
+	/**
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * <li> adapter calls this directly when the image view is clicked </li>
+	 */
 	@Override
 	public void onItemClick(int position) {
 		Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
@@ -122,18 +121,38 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		seeItemDetails.putExtra("image", itemCurrent.getItemImageUrl());
 		startActivity(seeItemDetails);
 	}
+
+
 	// recipient favorite item
+
+	/**
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
+	 */
 	@Override
 	public void onEditClick(int position) {
 		Toast.makeText(this, "Favorite Item " + position, Toast.LENGTH_SHORT).show();
 	}
 
+
 	// recipient message donor
+
+	/**
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
+	 */
 	@Override
 	public void onDeleteClick(int position) {
 		Toast.makeText(this, "Donor was notified " + position, Toast.LENGTH_SHORT).show();
 	}
+
+
 	// recipient mark item as recieved
+
+	/**
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
+	 */
 	@Override
 	public void onMarkClick(int position) {
 		Toast.makeText(this, "Item has been received " + position, Toast.LENGTH_SHORT).show();
@@ -427,7 +446,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			}
 		});
 
-		builder.show(); // methood to show the popup dialog
+		builder.show(); // method to show the popup dialog
 
 	}
 
