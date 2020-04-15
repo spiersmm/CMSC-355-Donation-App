@@ -154,7 +154,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 			}
 		});
 		// go to postNewItem activity to edit item
-		// should be able to seem image and the original item details
+		// should be able to see image and the original item details
 		Intent editItem = new Intent(getApplicationContext(), postNewItem.class);
 		editItem.putExtra("description", itemCurrent.getItemDescription());
 		editItem.putExtra("category", itemCurrent.getItemCategory());

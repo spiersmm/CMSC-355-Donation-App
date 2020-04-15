@@ -65,4 +65,6 @@
     <string name="condition2">Condition:</string>
     <string name="send_email">Send Email</string>
     <string name="send">Send</string>
+    <string name="my_open_items">My Open Items</string>
+    <string name="go_to_past_postings">Go to Past Postings</string>
 </resources>
