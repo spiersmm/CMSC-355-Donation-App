@@ -114,6 +114,8 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 
 	} // end onCreate()
+
+	// when click on an item, show more item details
 	@Override
 	public void onItemClick(int position) {
 		Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
