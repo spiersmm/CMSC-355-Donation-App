@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,11 +27,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+
+import okhttp3.internal.cache.DiskLruCache;
 
 public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener{
 
@@ -132,8 +137,13 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 	@Override
 	public void onDeleteClick(int position) {
 		Toast.makeText(this, "Donor was notified " + position, Toast.LENGTH_SHORT).show();
+		newItemInfo itemCurrent = mUploads.get(position);
+		String email = itemCurrent.getEmail();
+		Intent message = new Intent(getApplicationContext(), SendMessage.class);
+		message.putExtra("donorEmail", email);
+		startActivity(message);
 	}
-	// recipient mark item as recieved
+	// recipient mark item as received
 	@Override
 	public void onMarkClick(int position) {
 		Toast.makeText(this, "Item has been received " + position, Toast.LENGTH_SHORT).show();
@@ -149,6 +159,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		List<String> itemRecordItems = new ArrayList<>();
 			itemRecordItems.add("Available");
 			itemRecordItems.add("Received");
+			itemRecordItems.add("Favorited");
 
 		ArrayAdapter<String> itemRecordAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, itemRecordItems);
 			itemRecordAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -167,12 +178,6 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 				}
 			});
 	} // end createItemRecordSpinner()
-
-
-
-
-
-
 
 	/*
     Method for filter button and multiple choice popup dialog

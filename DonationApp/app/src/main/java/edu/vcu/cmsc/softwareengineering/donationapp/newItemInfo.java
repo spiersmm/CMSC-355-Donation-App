@@ -6,6 +6,7 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 import com.google.firebase.database.Exclude;
 
 public class newItemInfo {
+    private String email;
     private String itemDescription;
     private String itemCategory;
     private String itemCondition;
@@ -18,13 +19,14 @@ public class newItemInfo {
 
 
     public newItemInfo (String description, String category, String condition,
-                        String deliveryMethod, String quantity, String imageUrl){
+                        String deliveryMethod, String quantity, String imageUrl, String email){
         this.itemDescription = description;
         this.itemCategory = category;
         this.itemCondition = condition;
         this.itemDeliveryMethod = deliveryMethod;
         this.itemQuantity = quantity;
         this.itemImageUrl = imageUrl;
+        this.email = email;
     }
 
     public String getItemCategory() {
@@ -49,6 +51,8 @@ public class newItemInfo {
 
     public String getItemImageUrl() {return itemImageUrl; }
 
+    public String getEmail() {return email; }
+
     @Exclude
     public String getKey() {return mKey; }
 
@@ -64,6 +68,8 @@ public class newItemInfo {
     public void setItemQuantity(String quantity) { this.itemQuantity = quantity; }
 
     public void setItemImageUrl(String imageUrl) {this.itemImageUrl = imageUrl; }
+
+    public void setEmail(String email) {this.email = email; }
 
     @Exclude
     public void setKey(String key) {mKey = key; }

@@ -10,12 +10,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb47d09-c89c-4545-9652-3e40a1c009f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_api_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_backend_cct_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_2_24_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_datatransport_17_0_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_encoders_json_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_interop_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_20_1_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/SendMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_send_message.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_0_2_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorSignup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/ImageAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/vcu/cmsc/softwareengineering/donationapp/postNewItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
