@@ -105,7 +105,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 
 	/**
-	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter
 	 * <li> adapter calls this directly when the image view is clicked </li>
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 	// recipient favorite item
 
 	/**
-	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter
 	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 	// recipient message donor
 
 	/**
-	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter
 	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 	// recipient mark item as recieved
 
 	/**
-	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter.
+	 * implementation of a method from the interface OnItemClickListener, defined in ImageAdapter
 	 * <li> adapter uses this to handle a click on the menu item at 'position'</li>
 	 */
 	@Override
