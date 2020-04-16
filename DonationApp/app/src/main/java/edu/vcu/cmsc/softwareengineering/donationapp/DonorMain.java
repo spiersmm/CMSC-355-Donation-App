@@ -135,6 +135,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		newItemInfo itemCurrent = mUploads.get(position);
 		DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 		FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+		// find item in database
 		Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
 		// delete old item
 		itemQueury.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -63,4 +63,6 @@
     <string name="delivery_method2">Delivery Method:</string>
     <string name="quantity2">Quantity:</string>
     <string name="condition2">Condition:</string>
+    <string name="send_email">Send Email</string>
+    <string name="send">Send</string>
 </resources>

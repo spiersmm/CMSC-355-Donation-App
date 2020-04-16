@@ -159,7 +159,7 @@ public class postNewItem extends AppCompatActivity {
 
 
     private void uploadFile(final String EnteredDescription) {
-
+        final String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         if(ImageUri != null) {
             final StorageReference imageReference = myStorageReference.child(System.currentTimeMillis()
             + "." + getFileExtension(ImageUri));
@@ -173,7 +173,7 @@ public class postNewItem extends AppCompatActivity {
                             imageURL = uri.toString();
                             newItemInfo newItem = new newItemInfo(EnteredDescription,
                                     selectedCategory, selectedCondition,
-                                    selectedDeliveryMethod, selectedQuantity, imageURL);
+                                    selectedDeliveryMethod, selectedQuantity, imageURL, email);
 
                             myDatabaseReference.push().setValue(newItem);
                         }
@@ -220,7 +220,7 @@ public class postNewItem extends AppCompatActivity {
         else if(imageURL.equals(editImage)){
             newItemInfo newItem = new newItemInfo(EnteredDescription,
                     selectedCategory, selectedCondition,
-                    selectedDeliveryMethod, selectedQuantity, imageURL);
+                    selectedDeliveryMethod, selectedQuantity, imageURL, email);
 
             myDatabaseReference.push().setValue(newItem);
         }
