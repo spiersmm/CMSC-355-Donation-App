@@ -89,7 +89,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             if (mListener != null) {
                 int position = getAdapterPosition();
                 if (position != RecyclerView.NO_POSITION) {
-                    mListener.onItemClick(position);
+                    mListener.onItemClick(position);    // ImageAdapter.OnItemClickListener (1)
                 }
             }
         }
@@ -130,15 +130,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
                     switch (item.getItemId()) {
                         case 1:
-                            mListener.onEditClick(position);
+                            mListener.onEditClick(position);    // ImageAdapter.OnItemClickListener (2)
                             break;
 
                        case 2:
-                           mListener.onDeleteClick(position);
+                           mListener.onDeleteClick(position);   // ImageAdapter.OnItemClickListener (3)
                            break;
 
                         case 3:
-                            mListener.onMarkClick(position);
+                            mListener.onMarkClick(position);    // ImageAdapter.OnItemClickListener (4)
                             break;
                     }
                 }
