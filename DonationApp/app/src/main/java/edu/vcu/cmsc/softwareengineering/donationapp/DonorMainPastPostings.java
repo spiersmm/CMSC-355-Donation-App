@@ -128,7 +128,12 @@ public class DonorMainPastPostings extends AppCompatActivity implements ImageAda
         seeItemDetails.putExtra("recipientName", itemCurrent.getRecipientName());
         startActivity(seeItemDetails);
     }
+    // donor edit item
+    @Override
+    public void onEditClick(int position) {
+        Toast.makeText(this, "Cannot Edit a Finalized Item", Toast.LENGTH_SHORT).show();
 
+    }
     // donor delete item
     @Override
     public void onDeleteClick(int position) {
@@ -166,6 +171,10 @@ public class DonorMainPastPostings extends AppCompatActivity implements ImageAda
         });
 
     }
-
+    // donor mark item as donated
+    @Override
+    public void onMarkClick(int position) {
+        Toast.makeText(this, "Item has already been donated", Toast.LENGTH_SHORT).show();
+    }
 }
 
