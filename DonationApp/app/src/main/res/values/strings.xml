@@ -67,4 +67,6 @@
     <string name="send">Send</string>
     <string name="my_open_items">My Open Items</string>
     <string name="go_to_past_postings">Go to Past Postings</string>
+    <string name="go_to_current_postings">Go to Current Postings</string>
+    <string name="my_past_postings">My Past Postings</string>
 </resources>

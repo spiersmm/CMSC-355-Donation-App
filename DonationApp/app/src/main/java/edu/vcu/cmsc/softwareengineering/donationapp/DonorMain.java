@@ -54,6 +54,7 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		setContentView(R.layout.activity_donor_main);
 
 		Button postItemButton = findViewById(R.id.postItem);
+		Button pastPostsButton = findViewById(R.id.goToPastPostingsButton);
 
 		postItemButton.setOnClickListener(new View.OnClickListener() {
 
@@ -67,6 +68,17 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 				startActivity(postNewItem);
 			}
 		});
+
+
+
+        pastPostsButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent pastPostings = new Intent(getApplicationContext(), DonorMainPastPostings.class);
+
+                startActivity(pastPostings);
+            }
+        });
 
 
 		mRecylcerView = findViewById(R.id.recycler_view);
@@ -114,6 +126,8 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 		});
 
 	}
+
+
 
 	@Override
 	public void onItemClick(int position) {
