@@ -69,4 +69,8 @@
     <string name="go_to_past_postings">Go to Past Postings</string>
     <string name="go_to_current_postings">Go to Current Postings</string>
     <string name="my_past_postings">My Past Postings</string>
+    <string name="mark_item_as_donated">Mark Item As Donated</string>
+    <string name="enter_recipient_name">Enter Recipient Name</string>
+    <string name="recipient_name">Recipient Name</string>
+    <string name="enter_name">Enter Name</string>
 </resources>

@@ -219,7 +219,39 @@ public class DonorMain extends AppCompatActivity implements ImageAdapter.OnItemC
 	@Override
 	public void onMarkClick(int position) {
 		Toast.makeText(this, "Item has been donated " + position, Toast.LENGTH_SHORT).show();
-	}
+        newItemInfo itemCurrent = mUploads.get(position);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        // find item in database
+        Query itemQueury = ref.child("Item Info").child(user.getUid()).orderByChild("itemDescription").equalTo(itemCurrent.getItemDescription());
+        // delete old item
+        itemQueury.addListenerForSingleValueEvent(new ValueEventListener() {
+            private static final String TAG = "item";
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    ds.getRef().removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
+        // go to postNewItem activity to edit item
+        // should be able to see image and the original item details
+        Intent markItemAsDonated = new Intent(getApplicationContext(), markItemAsDonated.class);
+        markItemAsDonated.putExtra("description", itemCurrent.getItemDescription());
+        markItemAsDonated.putExtra("category", itemCurrent.getItemCategory());
+        markItemAsDonated.putExtra("delivery", itemCurrent.getItemDeliveryMethod());
+        markItemAsDonated.putExtra("condition", itemCurrent.getItemCondition());
+        markItemAsDonated.putExtra("quantity", itemCurrent.getItemQuantity());
+        markItemAsDonated.putExtra("image", itemCurrent.getItemImageUrl());
+        startActivity(markItemAsDonated);
+    }
+
 }
 
 //Keeping all the comment below here, but commented out, in case I need to come back to it

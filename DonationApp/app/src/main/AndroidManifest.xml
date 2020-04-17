@@ -31,6 +31,8 @@
         <activity android:name=".Register" />
         <activity android:name=".DonorMain" />
         <activity android:name=".DonorMainPastPostings"/>
+        <activity android:name=".markItemAsDonated"/>
+        <activity android:name=".MoreDonatedInfo"/>
     </application>
 
 </manifest>

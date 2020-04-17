@@ -14,6 +14,7 @@ public class newItemInfo {
     private String itemQuantity;
     private String itemImageUrl;
     private String mKey;
+    private String recipientName;
 
     public newItemInfo() { }
 
@@ -28,6 +29,19 @@ public class newItemInfo {
         this.itemImageUrl = imageUrl;
         this.email = email;
     }
+
+    public newItemInfo (String description, String category, String condition,
+                        String deliveryMethod, String quantity, String imageUrl, String email, String recipientName){
+        this.itemDescription = description;
+        this.itemCategory = category;
+        this.itemCondition = condition;
+        this.itemDeliveryMethod = deliveryMethod;
+        this.itemQuantity = quantity;
+        this.itemImageUrl = imageUrl;
+        this.email = email;
+        this.recipientName = recipientName;
+    }
+
 
     public String getItemCategory() {
         return itemCategory;
@@ -53,6 +67,8 @@ public class newItemInfo {
 
     public String getEmail() {return email; }
 
+    public String getRecipientName() {return recipientName; }
+
     @Exclude
     public String getKey() {return mKey; }
 
@@ -67,9 +83,11 @@ public class newItemInfo {
 
     public void setItemQuantity(String quantity) { this.itemQuantity = quantity; }
 
-    public void setItemImageUrl(String imageUrl) {this.itemImageUrl = imageUrl; }
+    public void setItemImageUrl(String imageUrl) { this.itemImageUrl = imageUrl; }
 
-    public void setEmail(String email) {this.email = email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public void setRecipientName(String recipientName) { this.recipientName = recipientName; }
 
     @Exclude
     public void setKey(String key) {mKey = key; }
