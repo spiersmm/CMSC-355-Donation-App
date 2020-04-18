@@ -19,8 +19,15 @@ Project B Team 1 Sprint 3 Retrospective
     - Donor edit post
     - Donor delete post
     - Recipient email donor
+    - Recipient browse items
+    - Recipient see more item info
+    - Donor see more item info
+    - Donor view historic record
+    - Donor view more item info in historic record
+    - Donor historic record empty
+    - Donor add to historic record
   - Completed test cases (Junit tests)
-    - test newItemInfo class constructor, getter, and setter methods
+    - test newItemInfo class constructor, getter, and setter methods with email and recipient name added to class
  - **Team Reflection**
    - Chloe completed the view more information, edit post, delete post, and message donor activities and 
   worked on creating tests for new activities created this sprint
