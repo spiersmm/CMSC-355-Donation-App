@@ -10,14 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb47d09-c89c-4545-9652-3e40a1c009f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorHistoricRecordViewMoreInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorViewEmptyHistoricRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorViewHistoricRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorViewMoreItemInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientBrowseItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/RecipientViewMoreItemInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/androidTest/java/edu/vcu/cmsc/softwareengineering/donationapp/DonorEditItemImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfoUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/vcu/cmsc/softwareengineering/donationapp/newItemInfoUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mark_item_as_donated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mark_item_as_donated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_more_donated_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_more_donated_info.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
