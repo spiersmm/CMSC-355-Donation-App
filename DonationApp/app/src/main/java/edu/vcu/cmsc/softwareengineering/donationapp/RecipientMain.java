@@ -32,14 +32,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 import okhttp3.internal.cache.DiskLruCache;
 
 public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnItemClickListener{
 
 	private String SelectedItemRecord;
+	private List<List<String>> filters;
 
 	private RecyclerView mRecylcerView;
 	private ImageAdapter mAdapter;
@@ -61,6 +64,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 
 	createItemRecordSpinner();
+	setFilters();
 
 	/*
 	Recipients item listing 'rmRecyclerView'
@@ -184,6 +188,14 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			});
 	} // end createItemRecordSpinner()
 
+	private void setFilters() {
+		filters = new ArrayList<>();
+		filters.add(newItemInfo.getCategoriesList());
+		filters.add(newItemInfo.getConditionList());
+		filters.add(null); //TODO filtering by date yet to be implemented
+		filters.add(newItemInfo.getDeliveryMethodList());
+	}
+
 	/*
     Method for filter button and multiple choice popup dialog
     consists of inner methods: <li>.setMultiChoiceItems() method for the checkbox list</li>
@@ -191,33 +203,52 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
     <li>.setNeutralButton() method for a 'cancel' button</li>
      */
 	public void filterCategory(View view) {
+		final List<newItemInfo> filteredList = new ArrayList<>();
+		final String[] options = filters.get(0).toArray(new String[0]);    // options for the popup
+		final List<String> categories = filters.get(0);
+		final boolean[] checked = new boolean[8]; Arrays.fill(checked, false); // default state of checkboxes
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
 		builder.setTitle("Category Filter"); // set title of dialog
 
-
-		final String[] options = { "Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false, false, false, false, false, false };   // default state of checkboxes
-		final List<String> list = Arrays.asList(options);
 
         /*
         Method for the actual multiple choice checkbox popup, containing onclick listener
         setMultiChoiceItems()
          */
 		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
+
 			@Override
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
+				//state of the recycler before changing it
+				final List<newItemInfo> dataSnapshot = mUploads;
 
 				checked[which] = isChecked;
-				String currentItem = list.get(which);
+				final String category = categories.get(which);
+				Toast.makeText(RecipientMain.this,category + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
 
-				Toast.makeText(RecipientMain.this,currentItem + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
-
-
+				if (isChecked) {
+					for (newItemInfo item : dataSnapshot) {
+						if (item.getItemCategory().equals(category)) {
+							filteredList.add(item);
+							dataSnapshot.remove(item);
+						}
+					}
+				} else {
+					if (filteredList.size() == 0) {
+						filteredList.addAll(dataSnapshot);
+					} else {
+						for (newItemInfo item : filteredList) {
+							if (item.getItemCategory().equals(category)) {
+								dataSnapshot.add(item);
+								filteredList.remove(item);
+							}
+						}
+					}
+				}
 			}
 		});
-
 
         /*
         Method for the ok button and onclick handler
@@ -226,6 +257,8 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Toast.makeText(RecipientMain.this,"ok button was clicked", Toast.LENGTH_SHORT).show();
+				if (filteredList.size() == 0) filteredList.addAll(mUploads);
+				mAdapter.updateData(filteredList);
 			}
 		});
 
@@ -402,7 +435,6 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
 
 				checked[which] = isChecked;
 				String currentItem = list.get(which);

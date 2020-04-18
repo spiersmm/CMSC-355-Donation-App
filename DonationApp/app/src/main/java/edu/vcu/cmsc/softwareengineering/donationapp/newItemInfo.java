@@ -5,6 +5,10 @@ package edu.vcu.cmsc.softwareengineering.donationapp;
 
 import com.google.firebase.database.Exclude;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class newItemInfo {
     private String email;
     private String itemDescription;
@@ -42,6 +46,25 @@ public class newItemInfo {
         this.recipientName = recipientName;
     }
 
+    public static List<String> getCategoriesList() {
+        String[] s = {"Clothes", "Food", "Furniture", "Toiletries", "Games/Toys", "Books", "Electronics", "Other"};
+        return Arrays.asList(s);
+    }
+
+    public static List<String> getConditionList() {
+        String[] s = {"Perfect", "Ok", "Poor"};
+        return Arrays.asList(s);
+    }
+
+    public static List<String> getDeliveryMethodList() {
+        String[] s = {"Pickup", "Delivery"};
+        return Arrays.asList(s);
+    }
+
+    public static List<String> getQuantityList() {
+        String[] s = {"1", "2", "3", "4", "5", "Over 5"};
+        return Arrays.asList(s);
+    }
 
     public String getItemCategory() {
         return itemCategory;
@@ -88,6 +111,7 @@ public class newItemInfo {
     public void setEmail(String email) { this.email = email; }
 
     public void setRecipientName(String recipientName) { this.recipientName = recipientName; }
+
 
     @Exclude
     public void setKey(String key) {mKey = key; }
