@@ -17,7 +17,8 @@ Project B Team 1 Sprint 3 Retrospective
       - Filter
         - As a recipient, I want to be able to filter items, so that I can find items that fit my needs.
   - Completed test cases (espresso tests) 
-    - Donor edit post
+    - Donor edit post item details
+    - Donor edit post item image
     - Donor delete post
     - Recipient email donor
     - Recipient browse items
@@ -25,8 +26,11 @@ Project B Team 1 Sprint 3 Retrospective
     - Donor see more item info
     - Donor view historic record
     - Donor view more item info in historic record
-    - Donor historic record empty
+    - Donor view empty historic record
     - Donor add to historic record
+    - Donor delete from historic record
+    - Donor try to edit from historic record
+    - Donor try to add item to historic record that is already in historic record
   - Completed test cases (Junit tests)
     - test newItemInfo class constructor, getter, and setter methods with email and recipient name added to class
  - **Team Reflection**
