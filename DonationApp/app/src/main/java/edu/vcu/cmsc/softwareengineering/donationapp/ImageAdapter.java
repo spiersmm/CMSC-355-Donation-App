@@ -68,6 +68,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return mUploads.size();
     }
 
+    public List<newItemInfo> getmUploads() {
+        return mUploads;
+    }
+
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
 
@@ -159,6 +163,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener = listener;
+    }
+
+    public void updateData(List<newItemInfo> filteredData) {
+        mUploads = filteredData;
+        notifyDataSetChanged();
     }
 
 }

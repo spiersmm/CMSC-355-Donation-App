@@ -235,14 +235,7 @@ public class postNewItem extends AppCompatActivity {
         final Spinner categories = (Spinner) findViewById(R.id.spinnerCategories);
         List<String> categoryItems = new ArrayList<String>();
         categoryItems.add(editCategory);
-        categoryItems.add("Clothes");
-        categoryItems.add("Food");
-        categoryItems.add("Furniture");
-        categoryItems.add("Toiletries");
-        categoryItems.add("Games/Toys");
-        categoryItems.add("Books");
-        categoryItems.add("Electronics");
-        categoryItems.add("Other");
+        categoryItems.addAll(newItemInfo.getCategoriesList());
 
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, categoryItems);
@@ -268,8 +261,7 @@ public class postNewItem extends AppCompatActivity {
 
         List<String> deliveryItems = new ArrayList<String>();
         deliveryItems.add(editDelivery);
-        deliveryItems.add("Pickup");
-        deliveryItems.add("Delivery");
+        deliveryItems.addAll(newItemInfo.getDeliveryMethodList());
 
         ArrayAdapter<String> deliveryAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, deliveryItems);
@@ -295,9 +287,7 @@ public class postNewItem extends AppCompatActivity {
 
         List<String> Items = new ArrayList<String>();
         Items.add(editCondition);
-        Items.add("Perfect");
-        Items.add("Ok");
-        Items.add("Poor");
+        Items.addAll(newItemInfo.getConditionList());
 
         ArrayAdapter<String> conditionAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, Items);
@@ -323,12 +313,7 @@ public class postNewItem extends AppCompatActivity {
 
         List<String> Items = new ArrayList<String>();
         Items.add(editQuantity);
-        Items.add("1");
-        Items.add("2");
-        Items.add("3");
-        Items.add("4");
-        Items.add("5");
-        Items.add("Over 5");
+        Items.addAll(newItemInfo.getQuantityList());
 
         ArrayAdapter<String> QuantityAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, Items);
