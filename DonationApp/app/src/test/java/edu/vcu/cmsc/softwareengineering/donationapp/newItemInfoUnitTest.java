@@ -10,10 +10,12 @@ import static org.junit.Assert.*;
 
 public class newItemInfoUnitTest {
     private newItemInfo newItem;
+    private newItemInfo newItem2;
 
     @Before
     public void setUp() throws Exception {
         newItem = new newItemInfo("TV", "Electronics", "Perfect", "Pickup", "1", "url", "email");
+        newItem2 = new newItemInfo("TV", "Electronics", "Perfect", "Pickup", "1", "url", "email", "goodwill");
     }
     @Test
     public void testGetItemDescription() {
@@ -42,6 +44,10 @@ public class newItemInfoUnitTest {
     @Test
     public void testGetEmail() {
         assertTrue(newItem.getEmail().equals("email"));
+    }
+    @Test
+    public void testGetRecipientName() {
+        assertTrue(newItem2.getRecipientName().equals("goodwill"));
     }
     @Test
     public void testSetItemDescription() {
@@ -77,5 +83,10 @@ public class newItemInfoUnitTest {
     public void testSetEmail() {
         newItem.setEmail("test@gmail.com");
         assertTrue(newItem.getEmail().equals("test@gmail.com"));
+    }
+    @Test
+    public void testSetRecipientName() {
+        newItem2.setRecipientName("vcu");
+        assertTrue(newItem2.getRecipientName().equals("vcu"));
     }
 }
