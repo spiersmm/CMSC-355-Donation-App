@@ -11,3 +11,7 @@ Project B Team 1 Sprint 3 Backlog
   - As a donor, I want to have a historic record, so I can view what items I have donated in the past.
 - Recipient Historic Record
   - As a recipient, I want to view the receipt of past transactions, detailing the donor, item(s), and date of each, in my app so that I can easily access the information from specific transactions when verifying that the items in my organization's inventory are accounted for.
+- View More Information
+  - As a recipient, I want to be able to view: the description, category, delivery method, condition, and quantity of item(s) in a donor's active post, so that I can evaluate whether or not my organization would be able to receive, or benefit from receiving, the posted donation.
+- Message Donor
+  - As a recipient, I want to be able to message the donor, so that I can let them know I am interested in receiving an item they have posted

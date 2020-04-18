@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.test.espresso:espresso-remote:3.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8256b926d1536ef9fb7063648c2a85bc/espresso-remote-3.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8256b926d1536ef9fb7063648c2a85bc/espresso-remote-3.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.espresso/espresso-remote/3.1.0/f6b0fe01b93c56fcbc8f08007943bb931e425a01/espresso-remote-3.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.espresso/espresso-remote/3.1.0/142afca43cc0b92bce3403162af74742e798d35c/espresso-remote-3.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
