@@ -21,7 +21,7 @@ Project B Team 1 Sprint 3 Backlog
     - As a donator, I want to be able to delete a post, so recipients know this is item is no longer available
   - Browse Items
     - As a recipient, I want to be able to see what items have been posted, so that I can find what items I need
-    - Donor Historic Record
+  - Donor Historic Record
     - As a donor, I want to have a historic record, so I can view what items I have donated in the past.
   - View More Information
     - As a recipient, I want to be able to view: the description, category, delivery method, condition, and quantity of item(s) in a donor's active post, so that I can evaluate whether or not my organization would be able to receive, or benefit from receiving, the posted donation.
