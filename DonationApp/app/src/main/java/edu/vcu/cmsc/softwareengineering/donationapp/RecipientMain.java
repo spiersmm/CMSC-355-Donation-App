@@ -285,32 +285,48 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
      */
 	public void filterCondition(View view) {
 
+		//state of the recycler before changing it
+		final List<newItemInfo> dataSnapshot = mUploads;
+		final List<newItemInfo> filteredList = new ArrayList<>();
+		final String[] options = filters.get(1).toArray(new String[1]);    // options for the popup
+		final List<String> conditions = filters.get(1);
+		final boolean[] checked = new boolean[3]; Arrays.fill(checked, false); // default state of checkboxes
+
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
-		builder.setTitle("Condition Filter"); // set title of dialog
+		builder.setTitle("Conditions Filter"); // set title of dialog
 
-
-		final String[] options = { "Perfect", "Ok", "Poor" };    // options for the popup
-		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes
-		final List<String> list = Arrays.asList(options);
 
         /*
         Method for the actual multiple choice checkbox popup, containing onclick listener
         setMultiChoiceItems()
          */
 		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
+
 			@Override
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
-
 				checked[which] = isChecked;
-				String currentItem = list.get(which);
+				String category = conditions.get(which);
+				Toast.makeText(RecipientMain.this,category + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
 
-				Toast.makeText(RecipientMain.this,currentItem + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
-
-
+				if (isChecked) {
+					for (newItemInfo item : dataSnapshot) {
+						if (item.getItemCondition().equals(category)) {
+							filteredList.add(item);
+						}
+					}
+				} else {
+					if (filteredList.size() == 0) {
+						filteredList.addAll(dataSnapshot);
+					} else {
+						for (newItemInfo item : filteredList) {
+							if (item.getItemCondition().equals(category)) {
+								filteredList.remove(item);
+							}
+						}
+					}
+				}
 			}
 		});
-
 
         /*
         Method for the ok button and onclick handler
@@ -319,6 +335,8 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Toast.makeText(RecipientMain.this,"ok button was clicked", Toast.LENGTH_SHORT).show();
+				if (filteredList.size() == 0) filteredList.addAll(dataSnapshot);
+				mAdapter.updateData(filteredList);
 			}
 		});
 
@@ -336,6 +354,65 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 		});
 
 		builder.show(); // method to show the popup dialog
+
+
+
+
+
+
+
+
+//		AlertDialog.Builder builder = new AlertDialog.Builder(this);    // the alert popup class
+//		builder.setTitle("Condition Filter"); // set title of dialog
+//
+//
+//		final String[] options = { "Perfect", "Ok", "Poor" };    // options for the popup
+//		final boolean[] checked = new boolean[] { false, false, false };   // default state of checkboxes
+//		final List<String> list = Arrays.asList(options);
+//
+//        /*
+//        Method for the actual multiple choice checkbox popup, containing onclick listener
+//        setMultiChoiceItems()
+//         */
+//		builder.setMultiChoiceItems(options, checked, new DialogInterface.OnMultiChoiceClickListener() {
+//			@Override
+//			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+//
+//
+//				checked[which] = isChecked;
+//				String currentItem = list.get(which);
+//
+//				Toast.makeText(RecipientMain.this,currentItem + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
+//
+//
+//			}
+//		});
+//
+//
+//        /*
+//        Method for the ok button and onclick handler
+//         */
+//		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+//			@Override
+//			public void onClick(DialogInterface dialog, int which) {
+//				Toast.makeText(RecipientMain.this,"ok button was clicked", Toast.LENGTH_SHORT).show();
+//			}
+//		});
+//
+//
+//        /*
+//        Method for the cancel button and onclick handler (neutral for now)
+//        there is also a setNegativeButton method
+//         */
+//
+//		builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+//			@Override
+//			public void onClick(DialogInterface dialog, int which) {
+//				Toast.makeText(RecipientMain.this,"cancel button was clicked", Toast.LENGTH_SHORT).show();
+//			}
+//		});
+//
+//		builder.show(); // method to show the popup dialog
 
 	}
 
