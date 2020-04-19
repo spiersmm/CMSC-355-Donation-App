@@ -37,7 +37,8 @@ Project B Team 1 Sprint 3 Retrospective
  - **Team Reflection**
    - Chloe completed the view more information, edit post, delete post, and message donor activities and 
   worked on creating tests for new activities created this sprint
-   - Megan added four new activities to be able to "post" an item to a new branch in the database to mark items as donated to create the donor historic record and then view the items in the donor historic record 
+   - Megan added four new activities to be able to "post" an item to a new branch in the database to mark items as donated to create the donor historic record and then view the items in the donor historic record
+   - Matthew Scott made the item list view in the recipient layout and the filters for item listing (Matthew Stewart helped with filter too)
    - This sprint we were able to complete more than past sprints because we have a better understanding of the databases we have created on Firebase and are more familier with Android Studio and github
    - We learned that some of the original functionalities we had planned on creating for this app were much more complex than 
   originally thought so we had to rework some of the activities so we could finish as much as possible for the final sprint
