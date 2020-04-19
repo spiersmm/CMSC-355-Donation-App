@@ -16,6 +16,7 @@ Project B Team 1 Sprint 3 Retrospective
    - Started user stories
       - Filter
         - As a recipient, I want to be able to filter items, so that I can find items that fit my needs.
+          - working for some filters
   - Completed test cases (espresso tests) 
     - Donor edit post item details
     - Donor edit post item image
@@ -37,7 +38,7 @@ Project B Team 1 Sprint 3 Retrospective
    - Chloe completed the view more information, edit post, delete post, and message donor activities and 
   worked on creating tests for new activities created this sprint
    - Megan added four new activities to be able to "post" an item to a new branch in the database to mark items as donated to create the donor historic record and then view the items in the donor historic record 
-   - This sprint we were able to complete more than past sprints because we have a better understanding of the databases we have created 
-   on Firebase and are more familier with Android Studio and github
+   - This sprint we were able to complete more than past sprints because we have a better understanding of the databases we have created on Firebase and are more familier with Android Studio and github
    - We learned that some of the original functionalities we had planned on creating for this app were much more complex than 
   originally thought so we had to rework some of the activities so we could finish as much as possible for the final sprint
+   - Originally we thought that we could have notifications between recipients and donors and an in-app messaging system,we also wanted recipients to be able to favorite items and to be able to create a wishlist and receive notifications if an item from their list waas posted, we were also not able to complete the recipient historic record
