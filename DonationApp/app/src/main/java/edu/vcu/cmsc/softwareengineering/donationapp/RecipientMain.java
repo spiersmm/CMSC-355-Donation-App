@@ -203,6 +203,8 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
     <li>.setNeutralButton() method for a 'cancel' button</li>
      */
 	public void filterCategory(View view) {
+		//state of the recycler before changing it
+		final List<newItemInfo> dataSnapshot = mUploads;
 		final List<newItemInfo> filteredList = new ArrayList<>();
 		final String[] options = filters.get(0).toArray(new String[0]);    // options for the popup
 		final List<String> categories = filters.get(0);
@@ -220,19 +222,14 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 
 			@Override
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
-				//state of the recycler before changing it
-				final List<newItemInfo> dataSnapshot = mUploads;
-
 				checked[which] = isChecked;
-				final String category = categories.get(which);
+				String category = categories.get(which);
 				Toast.makeText(RecipientMain.this,category + " set to : " + isChecked, Toast.LENGTH_SHORT).show();
 
 				if (isChecked) {
 					for (newItemInfo item : dataSnapshot) {
 						if (item.getItemCategory().equals(category)) {
 							filteredList.add(item);
-							dataSnapshot.remove(item);
 						}
 					}
 				} else {
@@ -241,7 +238,6 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 					} else {
 						for (newItemInfo item : filteredList) {
 							if (item.getItemCategory().equals(category)) {
-								dataSnapshot.add(item);
 								filteredList.remove(item);
 							}
 						}
@@ -257,7 +253,7 @@ public class RecipientMain extends AppCompatActivity implements ImageAdapter.OnI
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Toast.makeText(RecipientMain.this,"ok button was clicked", Toast.LENGTH_SHORT).show();
-				if (filteredList.size() == 0) filteredList.addAll(mUploads);
+				if (filteredList.size() == 0) filteredList.addAll(dataSnapshot);
 				mAdapter.updateData(filteredList);
 			}
 		});
